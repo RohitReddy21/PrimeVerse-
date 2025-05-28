@@ -237,7 +237,7 @@ const Header = () => {
                 
                 {/* Mobile Services Section */}
                 <div className="flex flex-col items-center space-y-4">
-                  <span className="text-xl font-medium text-dark">Services</span>
+                  <Link to="/services" onClick={closeMenu}><span className="text-xl font-medium text-dark">Services</span></Link>
                   <div className="flex flex-col items-center space-y-3">
                     {serviceLinks.map((service) => (
                       <Link
