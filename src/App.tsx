@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
 
 // Service Pages
 import WebDesign from './pages/services/WebDesign';
@@ -36,11 +37,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/services/web-design" element={<WebDesign />} />
-            <Route path="/services/seo" element={<SEO />} />
-            <Route path="/services/social-media" element={<SocialMedia />} />
-            <Route path="/services/paid-ads" element={<PaidAds />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
           </Routes>
         </AnimatePresence>
