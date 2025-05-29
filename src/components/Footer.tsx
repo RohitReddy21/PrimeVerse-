@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-import Logo from './Logo';
+import logo from '../components/assets/logo.jpeg';
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <Logo />
+          <img src={logo} alt="" className='w-40 h-16 rounded-lg'/>
             <p className="text-gray-300 max-w-xs">
               Transforming businesses with innovative digital marketing solutions and web design services.
             </p>

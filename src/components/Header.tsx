@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Home, User, Briefcase, BookOpen, Mail, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Logo from './Logo';
+import logo from '../components/assets/logo.jpeg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,11 +19,7 @@ const Header = () => {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -32,8 +28,10 @@ const Header = () => {
 
   // Close dropdowns when clicking outside
   useEffect(() => {
-    const handleClickOutside = () => {
-      setIsServicesOpen(false);
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.services-dropdown')) {
+        setIsServicesOpen(false);
+      }
     };
 
     if (isServicesOpen) {
@@ -43,12 +41,30 @@ const Header = () => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isServicesOpen]);
 
-  // Main navigation links
+  // Close mobile menu on route change
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
+  // Main navigation links with icons for mobile
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: '/', icon: Home },
+    { name: 'About', path: '/about', icon: User },
+    { name: 'Blog', path: '/blog', icon: BookOpen },
+    { name: 'Contact', path: '/contact', icon: Mail },
   ];
 
   // Services dropdown items
@@ -60,238 +76,298 @@ const Header = () => {
     { name: 'App Development', path: '/services/app-development' },
   ];
 
+  // Helper function to get nav link classes
+  const getNavLinkClasses = (path, isActive) => {
+    const baseClasses = "text-lg font-medium transition-all duration-300 relative";
+    const activeClasses = "text-blue-400";
+    const inactiveClasses = isScrolled ? "text-white hover:text-blue-400" : "text-white hover:text-blue-400";
+    
+    return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
+  };
+
+  // Helper function for services button classes
+  const getServicesButtonClasses = () => {
+    const isActive = location.pathname.startsWith('/services');
+    const baseClasses = "flex items-center text-lg font-medium transition-all duration-300";
+    const activeClasses = "text-blue-400";
+    const inactiveClasses = isScrolled ? "text-white hover:text-blue-400" : "text-white hover:text-blue-400";
+    
+    return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
+  };
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'
-      }`}
-    >
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="z-50" onClick={closeMenu}>
-          <Logo />
-        </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-gray-900/95 backdrop-blur-md shadow-lg py-2' 
+            : 'bg-gray-800/90 backdrop-blur-sm py-3'
+        }`}
+      >
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <Link to="/" className="z-50 flex-shrink-0" onClick={closeMenu}>
+            <img src={logo} alt="Logo" className='w-40 h-16 rounded-lg hover:scale-105 transition-transform duration-300'/>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link
-            to="/"
-            className={`text-lg font-medium transition-colors hover:text-primary-500 ${
-              location.pathname === '/'
-                ? 'text-primary-500'
-                : isScrolled
-                ? 'text-dark'
-                : 'text-gray-800'
-            }`}
-          >
-            Home
-          </Link>
-          
-          <Link
-            to="/about"
-            className={`text-lg font-medium transition-colors hover:text-primary-500 ${
-              location.pathname === '/about'
-                ? 'text-primary-500'
-                : isScrolled
-                ? 'text-dark'
-                : 'text-gray-800'
-            }`}
-          >
-            About
-          </Link>
-          
-          {/* Services Dropdown */}
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={toggleServices}
-              className={`flex items-center text-lg font-medium transition-colors hover:text-primary-500 ${
-                location.pathname.startsWith('/services')
-                  ? 'text-primary-500'
-                  : isScrolled
-                  ? 'text-dark'
-                  : 'text-gray-800'
-              }`}
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link
+              to="/"
+              className={getNavLinkClasses('/', location.pathname === '/')}
             >
-              Services
-              <ChevronDown 
-                size={16} 
-                className={`ml-1 transition-transform ${
-                  isServicesOpen ? 'rotate-180' : ''
-                }`} 
-              />
-            </button>
-            
-            <AnimatePresence>
-              {isServicesOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border py-2 z-50"
-                >
-                  {serviceLinks.map((service) => (
-                    <Link
-                      key={service.name}
-                      to={service.path}
-                      className={`block px-4 py-2 text-sm transition-colors hover:bg-gray-50 hover:text-primary-500 ${
-                        location.pathname === service.path
-                          ? 'text-primary-500 bg-gray-50'
-                          : 'text-gray-700'
-                      }`}
-                      onClick={closeServices}
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
-                  <div className="border-t my-2"></div>
-                  <Link
-                    to="/services"
-                    className="block px-4 py-2 text-sm font-medium text-primary-500 hover:bg-gray-50"
-                    onClick={closeServices}
-                  >
-                    View All Services
-                  </Link>
-                </motion.div>
+              Home
+              {location.pathname === '/' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
               )}
-            </AnimatePresence>
-          </div>
-
-          <Link
-            to="/blog"
-            className={`text-lg font-medium transition-colors hover:text-primary-500 ${
-              location.pathname === '/blog'
-                ? 'text-primary-500'
-                : isScrolled
-                ? 'text-dark'
-                : 'text-gray-800'
-            }`}
-          >
-            Blog
-          </Link>
-
-          <Link
-            to="/contact"
-            className={`text-lg font-medium transition-colors hover:text-primary-500 ${
-              location.pathname === '/contact'
-                ? 'text-primary-500'
-                : isScrolled
-                ? 'text-dark'
-                : 'text-gray-800'
-            }`}
-          >
-            Contact
-          </Link>
-
-          <Link
-            to="/contact"
-            className="btn btn-primary"
-          >
-            Get Started
-          </Link>
-        </nav>
-
-        {/* Mobile Navigation Toggle */}
-        <button
-          className="md:hidden z-50 text-primary-500"
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
-        >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-
-        {/* Mobile Navigation Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, x: '100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100%' }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-white flex flex-col justify-center items-center md:hidden"
+            </Link>
+            
+            <Link
+              to="/about"
+              className={getNavLinkClasses('/about', location.pathname === '/about')}
             >
-              <nav className="flex flex-col items-center space-y-6">
-                <Link
-                  to="/"
-                  className={`text-xl font-medium transition-colors hover:text-primary-500 ${
-                    location.pathname === '/'
-                      ? 'text-primary-500'
-                      : 'text-dark'
-                  }`}
-                  onClick={closeMenu}
-                >
-                  Home
-                </Link>
-                
-                <Link
-                  to="/about"
-                  className={`text-xl font-medium transition-colors hover:text-primary-500 ${
-                    location.pathname === '/about'
-                      ? 'text-primary-500'
-                      : 'text-dark'
-                  }`}
-                  onClick={closeMenu}
-                >
-                  About
-                </Link>
-                
-                {/* Mobile Services Section */}
-                <div className="flex flex-col items-center space-y-4">
-                  <Link to="/services" onClick={closeMenu}><span className="text-xl font-medium text-dark">Services</span></Link>
-                  <div className="flex flex-col items-center space-y-3">
-                    {serviceLinks.map((service) => (
+              About
+              {location.pathname === '/about' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
+              )}
+            </Link>
+            
+            {/* Services Dropdown */}
+            <div className="relative services-dropdown">
+              <button
+                onClick={toggleServices}
+                className={getServicesButtonClasses()}
+              >
+                Services
+                <ChevronDown 
+                  size={16} 
+                  className={`ml-1 transition-transform duration-300 ${
+                    isServicesOpen ? 'rotate-180' : ''
+                  }`} 
+                />
+                {location.pathname.startsWith('/services') && (
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
+                )}
+              </button>
+              
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-50 overflow-hidden"
+                  >
+                    {serviceLinks.map((service, index) => (
                       <Link
                         key={service.name}
                         to={service.path}
-                        className={`text-lg transition-colors hover:text-primary-500 ${
+                        className={`block px-4 py-3 text-sm transition-all duration-200 hover:bg-blue-50 hover:text-blue-600 border-l-4 border-transparent hover:border-blue-400 ${
                           location.pathname === service.path
-                            ? 'text-primary-500'
-                            : 'text-gray-600'
+                            ? 'text-blue-600 bg-blue-50 border-blue-400'
+                            : 'text-gray-700'
                         }`}
-                        onClick={closeMenu}
+                        onClick={closeServices}
                       >
-                        {service.name}
+                        <div className="flex items-center justify-between">
+                          {service.name}
+                          <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
                       </Link>
                     ))}
-                  </div>
+                    <div className="border-t my-2 mx-2"></div>
+                    <Link
+                      to="/services"
+                      className="block px-4 py-3 text-sm font-medium text-blue-600 hover:bg-blue-50 transition-all duration-200"
+                      onClick={closeServices}
+                    >
+                      <div className="flex items-center justify-between">
+                        View All Services
+                        <ArrowRight size={14} />
+                      </div>
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <Link
+              to="/blog"
+              className={getNavLinkClasses('/blog', location.pathname === '/blog')}
+            >
+              Blog
+              {location.pathname === '/blog' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
+              )}
+            </Link>
+
+            <Link
+              to="/contact"
+              className={getNavLinkClasses('/contact', location.pathname === '/contact')}
+            >
+              Contact
+              {location.pathname === '/contact' && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
+              )}
+            </Link>
+
+            <Link
+              to="/contact"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              Get Started
+            </Link>
+          </nav>
+
+          {/* Mobile Navigation Toggle */}
+          <button
+            className={`md:hidden z-[60] p-2 rounded-lg transition-all duration-300 ${
+              isMenuOpen 
+                ? 'text-gray-600 bg-white' 
+                : 'text-white hover:bg-white/10'
+            }`}
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Navigation Menu - Moved outside header for better positioning */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <div className="md:hidden">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/50 z-40"
+              onClick={closeMenu}
+            />
+            
+            {/* Mobile Menu Drawer */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ 
+                type: 'spring', 
+                damping: 30, 
+                stiffness: 300,
+                duration: 0.3 
+              }}
+              className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-50 overflow-y-auto"
+            >
+              {/* Mobile Menu Header */}
+              <div className="p-6 border-b border-gray-200 bg-gray-50">
+                <div className="flex items-center justify-between mb-4">
+                  <img src={logo} alt="Logo" className='w-32 h-12 rounded-lg'/>
+                  <button
+                    onClick={closeMenu}
+                    className="p-2 rounded-lg hover:bg-gray-200 transition-colors"
+                  >
+                    <X size={20} className="text-gray-600" />
+                  </button>
+                </div>
+                {/* <p className="text-sm text-gray-600">Navigate to any section</p> */}
+              </div>
+
+              {/* Mobile Navigation Links */}
+              <div className="p-6">
+                <div className="space-y-2">
+                  {navLinks.map((link, index) => {
+                    const Icon = link.icon;
+                    const isActive = location.pathname === link.path;
+                    
+                    return (
+                      <motion.div
+                        key={link.name}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <Link
+                          to={link.path}
+                          className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                            isActive
+                              ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600'
+                              : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                          }`}
+                          onClick={closeMenu}
+                        >
+                          <Icon size={20} />
+                          <span className="font-medium">{link.name}</span>
+                          {isActive && <ArrowRight size={16} className="ml-auto" />}
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                  
+                  {/* Mobile Services Section */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="pt-4"
+                  >
+                    <div className="px-4 py-2">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <Briefcase size={16} className="text-gray-500" />
+                        <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Services</h3>
+                      </div>
+                      <div className="space-y-1">
+                        {serviceLinks.map((service, index) => (
+                          <Link
+                            key={service.name}
+                            to={service.path}
+                            className={`block px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
+                              location.pathname === service.path
+                                ? 'text-blue-600 bg-blue-50'
+                                : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                            }`}
+                            onClick={closeMenu}
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                        <Link
+                          to="/services"
+                          className="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition-colors mt-2"
+                          onClick={closeMenu}
+                        >
+                          <span>View All Services</span>
+                          <ArrowRight size={14} />
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
 
-                <Link
-                  to="/blog"
-                  className={`text-xl font-medium transition-colors hover:text-primary-500 ${
-                    location.pathname === '/blog'
-                      ? 'text-primary-500'
-                      : 'text-dark'
-                  }`}
-                  onClick={closeMenu}
+                {/* Mobile CTA Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="mt-8 pt-6 border-t border-gray-200"
                 >
-                  Blog
-                </Link>
-
-                <Link
-                  to="/contact"
-                  className={`text-xl font-medium transition-colors hover:text-primary-500 ${
-                    location.pathname === '/contact'
-                      ? 'text-primary-500'
-                      : 'text-dark'
-                  }`}
-                  onClick={closeMenu}
-                >
-                  Contact
-                </Link>
-
-                <Link
-                  to="/contact"
-                  className="btn btn-primary"
-                  onClick={closeMenu}
-                >
-                  Get Started
-                </Link>
-              </nav>
+                  <Link
+                    to="/contact"
+                    className="flex items-center justify-center space-x-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                    onClick={closeMenu}
+                  >
+                    <span>Get Started</span>
+                    <ArrowRight size={16} />
+                  </Link>
+                </motion.div>
+              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </header>
+          </div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
