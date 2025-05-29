@@ -54,11 +54,10 @@ const Header = () => {
   // Services dropdown items
   const serviceLinks = [
     { name: 'Web Development', path: '/services/web-development' },
-    { name: 'Mobile Apps', path: '/services/mobile-apps' },
-    { name: 'UI/UX Design', path: '/services/ui-ux-design' },
     { name: 'Digital Marketing', path: '/services/digital-marketing' },
-    { name: 'SEO Optimization', path: '/services/seo' },
-    { name: 'Consulting', path: '/services/consulting' },
+    { name: 'IT Recruitment', path: '/services/it-recruitment' },
+    { name: 'CRM Management', path: '/services/crm-management' },
+    { name: 'App Development', path: '/services/app-development' },
   ];
 
   return (

@@ -1,150 +1,152 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
   CheckCircle, 
   Star, 
-  Code, 
-  Smartphone, 
-  Search, 
+  Users, 
+  Database, 
+  BarChart3, 
   Zap, 
   Shield, 
-  BarChart3,
-  Users,
-  Award,
+  Target,
   TrendingUp,
   Clock,
-  Target
+  Award,
+  Phone,
+  Mail,
+  Calendar,
+  DollarSign,
+  PieChart,
+  MessageSquare
 } from 'lucide-react';
 
-const CRMMangement = () => {
+const CRMManagement = () => {
   const features = [
     {
-      icon: <Code className="w-8 h-8 text-primary-500" />,
-      title: "Custom Development",
-      description: "Tailored solutions built from scratch to match your unique business requirements."
+      icon: <Users className="w-8 h-8 text-blue-500" />,
+      title: "Customer Data Management",
+      description: "Centralize all customer information, interactions, and preferences in one secure, organized database for better relationship management."
     },
     {
-      icon: <Smartphone className="w-8 h-8 text-primary-500" />,
-      title: "Mobile Responsive",
-      description: "Perfect display and functionality across all devices and screen sizes."
+      icon: <BarChart3 className="w-8 h-8 text-blue-500" />,
+      title: "Sales Pipeline Tracking",
+      description: "Visualize your sales funnel, track deals progress, and identify bottlenecks to optimize your sales process and increase conversions."
     },
     {
-      icon: <Search className="w-8 h-8 text-primary-500" />,
-      title: "SEO Optimized",
-      description: "Built-in SEO best practices to help your website rank higher in search results."
+      icon: <Target className="w-8 h-8 text-blue-500" />,
+      title: "Lead Management",
+      description: "Capture, qualify, and nurture leads effectively with automated workflows and intelligent lead scoring systems."
     },
     {
-      icon: <Zap className="w-8 h-8 text-primary-500" />,
-      title: "Lightning Fast",
-      description: "Optimized for speed with advanced caching and performance techniques."
+      icon: <Calendar className="w-8 h-8 text-blue-500" />,
+      title: "Task & Activity Management",
+      description: "Schedule follow-ups, set reminders, and manage customer touchpoints to ensure no opportunity is missed."
     },
     {
-      icon: <Shield className="w-8 h-8 text-primary-500" />,
-      title: "Secure & Reliable",
-      description: "Enterprise-level security measures and reliable hosting solutions."
+      icon: <PieChart className="w-8 h-8 text-blue-500" />,
+      title: "Advanced Analytics & Reporting",
+      description: "Generate detailed reports on sales performance, customer behavior, and ROI to make data-driven business decisions."
     },
     {
-      icon: <BarChart3 className="w-8 h-8 text-primary-500" />,
-      title: "Analytics Ready",
-      description: "Integrated tracking and analytics to monitor your website's performance."
+      icon: <MessageSquare className="w-8 h-8 text-blue-500" />,
+      title: "Multi-Channel Communication",
+      description: "Integrate email, phone, social media, and chat communications for seamless customer relationship management."
     }
   ];
 
   const process = [
     {
       step: "01",
-      title: "Discovery & Planning",
-      description: "We start by understanding your business goals, target audience, and project requirements through detailed consultation and research.",
+      title: "CRM Assessment & Strategy",
+      description: "We analyze your current customer management processes, identify pain points, and develop a comprehensive CRM strategy tailored to your business needs.",
       duration: "1-2 weeks"
     },
     {
       step: "02",
-      title: "Design & Prototyping",
-      description: "Create wireframes and high-fidelity designs that align with your brand identity and user experience goals.",
+      title: "System Configuration & Customization",
+      description: "Configure your CRM platform with custom fields, workflows, and integrations that match your unique business processes and requirements.",
       duration: "2-3 weeks"
     },
     {
       step: "03",
-      title: "Development & Testing",
-      description: "Build your website using modern technologies and conduct thorough testing across all devices and browsers.",
-      duration: "3-4 weeks"
+      title: "Data Migration & Training",
+      description: "Safely migrate your existing customer data and provide comprehensive training to ensure your team can maximize the CRM's potential.",
+      duration: "1-2 weeks"
     },
     {
       step: "04",
-      title: "Launch & Optimization",
-      description: "Deploy your website and provide ongoing support, maintenance, and performance optimization.",
+      title: "Launch & Ongoing Optimization",
+      description: "Deploy your CRM system and provide continuous support, monitoring, and optimization to ensure maximum ROI and user adoption.",
       duration: "1 week + ongoing"
     }
   ];
 
   const stats = [
-    { number: '200+', label: 'Websites Built', icon: <Award className="w-6 h-6" /> },
-    { number: '98%', label: 'Client Satisfaction', icon: <Star className="w-6 h-6" /> },
-    { number: '150%', label: 'Avg. Traffic Increase', icon: <TrendingUp className="w-6 h-6" /> },
-    { number: '24/7', label: 'Support Available', icon: <Clock className="w-6 h-6" /> }
+    { number: '500+', label: 'CRM Implementations', icon: <Award className="w-6 h-6" /> },
+    { number: '95%', label: 'Client Satisfaction', icon: <Star className="w-6 h-6" /> },
+    { number: '300%', label: 'Avg. Sales Increase', icon: <TrendingUp className="w-6 h-6" /> },
+    { number: '24/7', label: 'CRM Support', icon: <Clock className="w-6 h-6" /> }
   ];
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CEO, TechStart Inc.",
+      name: "Jennifer Martinez",
+      role: "Sales Director, Global Solutions Inc.",
       image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=2",
-      testimonial: "The website PrimeVerse created for us exceeded all expectations. Our online conversions increased by 180% within the first month!",
-      metric: "180% Conversion Increase"
+      testimonial: "Our CRM implementation transformed our sales process. We've seen a 250% increase in lead conversion rates and our team productivity has skyrocketed!",
+      metric: "250% Lead Conversion Increase"
     },
     {
-      name: "Michael Chen",
-      role: "Founder, Creative Studio",
+      name: "David Thompson",
+      role: "CEO, TechVenture Corp",
       image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=2",
-      testimonial: "Professional, creative, and results-driven. They delivered a stunning website that perfectly represents our brand.",
-      metric: "300% More Inquiries"
+      testimonial: "The CRM management solution provided by PrimeVerse has revolutionized how we handle customer relationships. Our customer retention improved by 40%.",
+      metric: "40% Better Customer Retention"
     }
   ];
 
   const pricingPlans = [
     {
-      name: "Starter",
-      price: "$2,999",
-      description: "Perfect for small businesses and startups",
+      name: "Starter CRM",
+      price: "$3,999",
+      description: "Perfect for small businesses starting with CRM",
       features: [
-        "Up to 5 pages",
-        "Responsive design",
-        "Basic SEO setup",
-        "Contact form",
-        "3 rounds of revisions",
-        "30 days support"
+        "Up to 1,000 contacts",
+        "Basic sales pipeline",
+        "Email integration",
+        "Contact management",
+        "Mobile app access",
+        "3 months support"
       ],
       popular: false
     },
     {
-      name: "Professional",
-      price: "$4,999",
-      description: "Ideal for growing businesses",
+      name: "Professional CRM",
+      price: "$6,999",
+      description: "Ideal for growing sales teams",
       features: [
-        "Up to 10 pages",
-        "Custom design",
-        "Advanced SEO",
-        "CMS integration",
-        "E-commerce ready",
-        "5 rounds of revisions",
-        "90 days support"
+        "Up to 10,000 contacts",
+        "Advanced sales automation",
+        "Custom reporting & analytics",
+        "Third-party integrations",
+        "Lead scoring & nurturing",
+        "Team collaboration tools",
+        "12 months support"
       ],
       popular: true
     },
     {
-      name: "Enterprise",
-      price: "$7,999",
-      description: "For large businesses and complex projects",
+      name: "Enterprise CRM",
+      price: "$12,999",
+      description: "For large organizations with complex needs",
       features: [
-        "Unlimited pages",
-        "Custom functionality",
-        "Advanced integrations",
-        "Performance optimization",
-        "Security features",
-        "Unlimited revisions",
-        "1 year support"
+        "Unlimited contacts",
+        "Custom workflow automation",
+        "Advanced analytics & AI",
+        "Multi-department integration",
+        "Custom field & modules",
+        "Dedicated account manager",
+        "24/7 priority support"
       ],
       popular: false
     }
@@ -154,60 +156,37 @@ const CRMMangement = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-600">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-600">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-10 left-10 w-72 h-72 bg-secondary-400/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
           </div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <motion.div
-              className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Code className="w-4 h-4 mr-2 text-accent-300" />
-              <span className="text-sm font-medium">Web Design & Development</span>
-            </motion.div>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+              <Users className="w-4 h-4 mr-2 text-cyan-300" />
+              <span className="text-sm font-medium">CRM Management Solutions</span>
+            </div>
             
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-secondary-200"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              Beautiful Websites That Convert
-            </motion.h1>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan-200">
+              Transform Customer Relationships Into Revenue
+            </h1>
             
-            <motion.p 
-              className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Create stunning, responsive websites that captivate your audience and drive conversions with our cutting-edge design and development expertise.
-            </motion.p>
+            <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
+              Boost sales productivity by 300% with our comprehensive CRM management platform. Streamline customer data, automate sales processes, and drive sustainable business growth.
+            </p>
 
-            <motion.div
-              className="flex flex-wrap justify-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Link 
-                to="/contact" 
-                className="px-8 py-4 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white rounded-full font-semibold hover:from-secondary-600 hover:to-secondary-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
-              >
-                Start Your Project
-              </Link>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
-                View Portfolio
+            <div className="flex flex-wrap justify-center gap-4">
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                Start Your CRM Journey
               </button>
-            </motion.div>
+              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+                View CRM Demo
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -215,70 +194,47 @@ const CRMMangement = () => {
       {/* Stats Section */}
       <section className="py-16 bg-white relative -mt-12 z-20">
         <div className="container mx-auto px-4">
-          <motion.div 
-            className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl mb-3">
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl mb-3">
                     {stat.icon}
                   </div>
-                  <div className="text-3xl font-bold text-primary-600 mb-1">{stat.number}</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-1">{stat.number}</div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center max-w-3xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-600 font-semibold rounded-full mb-4">
-              WHAT WE OFFER
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-600 font-semibold rounded-full mb-4">
+              CRM FEATURES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Features That Drive Results
+              Powerful CRM Management Tools
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Every website we create is built with modern technologies and best practices to ensure optimal performance and user experience.
+              Our comprehensive CRM platform includes everything you need to manage customer relationships, boost sales performance, and drive business growth through intelligent automation and analytics.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
               >
                 <div className="mb-6">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -287,46 +243,33 @@ const CRMMangement = () => {
       {/* Process Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center max-w-3xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-accent-100 to-secondary-100 text-accent-600 font-semibold rounded-full mb-4">
-              OUR PROCESS
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-600 font-semibold rounded-full mb-4">
+              IMPLEMENTATION PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              How We Create Your Website
+              Your CRM Implementation Journey
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our proven 4-step process ensures your project is delivered on time, on budget, and exceeds your expectations.
+              Our proven methodology ensures smooth CRM implementation with minimal disruption to your business operations while maximizing user adoption and ROI.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {process.map((step, index) => (
-              <motion.div
-                key={index}
-                className="relative"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+              <div key={index} className="relative">
                 <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl font-bold text-primary-500 mb-4">{step.step}</div>
+                  <div className="text-4xl font-bold text-blue-500 mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  <div className="inline-block px-3 py-1 bg-primary-100 text-primary-600 text-sm font-medium rounded-full">
+                  <div className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">
                     {step.duration}
                   </div>
                 </div>
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-300 to-gray-200"></div>
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-gray-200"></div>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -335,39 +278,29 @@ const CRMMangement = () => {
       {/* Pricing Section */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center max-w-3xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-secondary-100 to-accent-100 text-secondary-600 font-semibold rounded-full mb-4">
-              PRICING PLANS
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-100 to-purple-100 text-cyan-600 font-semibold rounded-full mb-4">
+              CRM PRICING PLANS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Choose Your Perfect Plan
+              Flexible CRM Solutions for Every Business
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Transparent pricing with no hidden fees. Choose the plan that best fits your business needs and budget.
+              Choose from our comprehensive CRM packages designed to scale with your business growth. All plans include setup, training, and ongoing support.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {pricingPlans.map((plan, index) => (
-              <motion.div
+              <div
                 key={index}
                 className={`relative bg-white rounded-2xl shadow-lg border-2 p-8 ${
-                  plan.popular ? 'border-primary-500 scale-105' : 'border-gray-100'
+                  plan.popular ? 'border-blue-500 scale-105' : 'border-gray-100'
                 } hover:shadow-xl transition-all duration-300`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    <span className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
@@ -375,7 +308,7 @@ const CRMMangement = () => {
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="text-4xl font-bold text-primary-600 mb-2">{plan.price}</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div>
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
 
@@ -388,17 +321,16 @@ const CRMMangement = () => {
                   ))}
                 </ul>
 
-                <Link 
-                  to="/contact" 
+                <button 
                   className={`block w-full text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                     plan.popular 
-                      ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 shadow-lg hover:shadow-xl' 
+                      ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700 shadow-lg hover:shadow-xl' 
                       : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
                   }`}
                 >
                   Get Started
-                </Link>
-              </motion.div>
+                </button>
+              </div>
             ))}
           </div>
         </div>
@@ -407,33 +339,23 @@ const CRMMangement = () => {
       {/* Testimonials Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center max-w-3xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-accent-100 to-primary-100 text-accent-600 font-semibold rounded-full mb-4">
-              CLIENT SUCCESS
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-600 font-semibold rounded-full mb-4">
+              SUCCESS STORIES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              What Our Clients Say
+              CRM Success Stories From Our Clients
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Don't just take our word for it. Here's what some of our satisfied clients have to say about their experience with us.
+              See how businesses like yours have transformed their customer relationships and boosted sales performance with our CRM management solutions.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="flex items-center mb-6">
                   <img 
@@ -458,73 +380,58 @@ const CRMMangement = () => {
                 <div className="inline-block px-3 py-1 bg-green-100 text-green-700 text-sm font-medium rounded-full">
                   {testimonial.metric}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-600 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-secondary-400/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-10 right-10 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
-            className="text-center max-w-4xl mx-auto text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center max-w-4xl mx-auto text-white">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Ready to Transform Your Online Presence?
+              Ready to Revolutionize Your Customer Management?
             </h2>
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-              Let's create a website that not only looks amazing but also drives real results for your business. Get started with a free consultation today.
+              Transform your sales process, improve customer relationships, and drive sustainable business growth with our comprehensive CRM management platform. Start your free consultation today.
             </p>
             
-            <motion.div
-              className="flex flex-wrap justify-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white rounded-full font-semibold hover:from-secondary-600 hover:to-secondary-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
-              >
-                Start Your Project
+            <div className="flex flex-wrap justify-center gap-4">
+              <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                Start Your CRM Transformation
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
-                Schedule Free Consultation
               </button>
-            </motion.div>
+              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+                Schedule CRM Demo
+              </button>
+            </div>
 
             <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/60">
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
-                <span>Free Consultation</span>
+                <span>Free CRM Consultation</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
-                <span>30-Day Money Back Guarantee</span>
+                <span>Data Migration Included</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
-                <span>Ongoing Support</span>
+                <span>24/7 CRM Support</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
   );
 };
 
-export default CRMMangement;
+export default CRMManagement;
