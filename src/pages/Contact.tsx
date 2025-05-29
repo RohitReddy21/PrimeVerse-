@@ -14,33 +14,63 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  // Replace with your actual Web3Forms access key
+  const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
+
+    // Prepare form data for Web3Forms
+    const formDataToSend = new FormData();
+    formDataToSend.append('access_key', WEB3FORMS_ACCESS_KEY);
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('service', formData.service);
+    formDataToSend.append('message', formData.message);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // Optional: Add subject line
+    formDataToSend.append('subject', `New Contact Form Submission from ${formData.name}`);
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitSuccess(true);
+        // Reset form after showing success message
+        setTimeout(() => {
+          setSubmitSuccess(false);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            service: '',
+            message: '',
+          });
+        }, 3000);
+      } else {
+        setSubmitError('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitError('Network error. Please check your connection and try again.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitSuccess(true);
-      
-      // Reset form after showing success message
-      setTimeout(() => {
-        setSubmitSuccess(false);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: '',
-        });
-      }, 3000);
-    }, 1500);
+    }
   };
 
   return (
@@ -93,6 +123,12 @@ const Contact = () => {
                 Fill out the form below, and one of our team members will reach out to discuss how 
                 we can help with your digital needs.
               </p>
+              
+              {submitError && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                  {submitError}
+                </div>
+              )}
               
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -191,8 +227,8 @@ const Contact = () => {
                 >
                   {isSubmitting ? (
                     <>
-                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white\" xmlns="http://www.w3.org/2000/svg\" fill="none\" viewBox="0 0 24 24">
-                        <circle className="opacity-25\" cx="12\" cy="12\" r="10\" stroke="currentColor\" strokeWidth="4"></circle>
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
                       Sending...

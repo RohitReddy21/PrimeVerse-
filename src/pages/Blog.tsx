@@ -1,96 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, User, Tag, Search, ArrowRight, TrendingUp } from 'lucide-react';
+import { Calendar, Clock, User, Search, ArrowRight, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { blogPosts } from '../data/blogPosts';
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState(blogPosts);
 
-  // Sample blog posts data
-  const blogPosts = [
-    {
-      id: 1,
-      title: "E-commerce Platform Redesign: 300% Increase in Conversion Rate",
-      excerpt: "How we transformed a traditional retail business into a modern e-commerce powerhouse through strategic UX design and performance optimization.",
-      content: "Complete case study of our 6-month project...",
-      author: "Sarah Johnson",
-      date: "2024-01-15",
-      readTime: "8 min read",
-      category: "Case Study",
-      tags: ["E-commerce", "UX Design", "Conversion Optimization"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Mobile App Development: From Concept to 1M+ Downloads",
-      excerpt: "The complete journey of building a successful mobile app, including technical challenges, user acquisition strategies, and scaling solutions.",
-      content: "Detailed breakdown of our mobile app development process...",
-      author: "Michael Chen",
-      date: "2024-01-10",
-      readTime: "12 min read",
-      category: "Case Study",
-      tags: ["Mobile Development", "React Native", "User Acquisition"],
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "The Future of Web Development: AI-Powered Design Tools",
-      excerpt: "Exploring how artificial intelligence is revolutionizing web development workflows and what it means for developers and designers.",
-      content: "In-depth analysis of AI tools in web development...",
-      author: "Emma Rodriguez",
-      date: "2024-01-08",
-      readTime: "6 min read",
-      category: "Technology",
-      tags: ["AI", "Web Development", "Future Trends"],
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "SEO Strategy That Increased Organic Traffic by 450%",
-      excerpt: "A comprehensive case study of our SEO approach that took a client from page 3 to position 1 for competitive keywords.",
-      content: "Step-by-step SEO strategy implementation...",
-      author: "David Kim",
-      date: "2024-01-05",
-      readTime: "10 min read",
-      category: "Case Study",
-      tags: ["SEO", "Digital Marketing", "Content Strategy"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "Building Scalable React Applications: Best Practices",
-      excerpt: "Essential patterns and practices for building maintainable React applications that can grow with your business needs.",
-      content: "Technical guide to React scalability...",
-      author: "Lisa Park",
-      date: "2024-01-03",
-      readTime: "7 min read",
-      category: "Development",
-      tags: ["React", "JavaScript", "Best Practices"],
-      image: "https://images.unsplash.com/photo-1633356122544-f6826e4e3a8b?w=800&h=400&fit=crop",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "UI/UX Design Trends That Actually Convert",
-      excerpt: "Beyond aesthetics: discover which design trends are proven to improve user engagement and conversion rates in 2024.",
-      content: "Analysis of effective design trends...",
-      author: "Alex Thompson",
-      date: "2024-01-01",
-      readTime: "5 min read",
-      category: "Design",
-      tags: ["UI/UX", "Design Trends", "Conversion"],
-      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=400&fit=crop",
-      featured: false
-    }
-  ];
-
-  const categories = ['All', 'Case Study', 'Technology', 'Development', 'Design'];
+  const categories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
+  const featuredPosts = blogPosts.filter(post => post.featured);
 
   // Filter posts based on search and category
   useEffect(() => {
@@ -111,12 +31,10 @@ const Blog = () => {
     setFilteredPosts(filtered);
   }, [searchTerm, selectedCategory]);
 
-  const featuredPosts = blogPosts.filter(post => post.featured);
-
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -127,7 +45,7 @@ const Blog = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Insights & Case Studies
             </h1>
-            <p className="text-xl md:text-2xl text-primary-100 mb-8">
+            <p className="text-xl md:text-2xl text-blue-100 mb-8">
               Real stories of digital transformation, technical insights, and industry trends
             </p>
             
@@ -139,7 +57,7 @@ const Blog = () => {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-300"
+                className="w-full pl-10 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
           </motion.div>
@@ -151,7 +69,7 @@ const Blog = () => {
         {featuredPosts.length > 0 && (
           <section className="mb-16">
             <div className="flex items-center mb-8">
-              <TrendingUp className="text-primary-500 mr-2" size={24} />
+              <TrendingUp className="text-blue-500 mr-2\" size={24} />
               <h2 className="text-3xl font-bold text-gray-900">Featured Articles</h2>
             </div>
             
@@ -171,14 +89,14 @@ const Blog = () => {
                       className="w-full h-64 object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                         {post.category}
                       </span>
                     </div>
                   </div>
                   
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
                       <Link to={`/blog/${post.id}`}>{post.title}</Link>
                     </h3>
                     
@@ -215,7 +133,7 @@ const Blog = () => {
                       
                       <Link
                         to={`/blog/${post.id}`}
-                        className="text-primary-500 hover:text-primary-600 font-medium flex items-center"
+                        className="text-blue-500 hover:text-blue-600 font-medium flex items-center"
                       >
                         Read More <ArrowRight size={16} className="ml-1" />
                       </Link>
@@ -235,8 +153,8 @@ const Blog = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full font-medium transition-colors ${
                 selectedCategory === category
-                  ? 'bg-primary-500 text-white'
-                  : 'bg-white text-gray-700 hover:bg-primary-50 hover:text-primary-600'
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600'
               }`}
             >
               {category}
@@ -269,14 +187,14 @@ const Blog = () => {
                       className="w-full h-48 object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                         {post.category}
                       </span>
                     </div>
                   </div>
                   
                   <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
                       <Link to={`/blog/${post.id}`}>{post.title}</Link>
                     </h3>
                     
@@ -307,7 +225,7 @@ const Blog = () => {
                       
                       <Link
                         to={`/blog/${post.id}`}
-                        className="text-primary-500 hover:text-primary-600 font-medium flex items-center text-sm"
+                        className="text-blue-500 hover:text-blue-600 font-medium flex items-center text-sm"
                       >
                         Read <ArrowRight size={14} className="ml-1" />
                       </Link>
@@ -320,19 +238,19 @@ const Blog = () => {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="bg-primary-600 text-white rounded-xl p-8 mt-16">
+        <section className="bg-blue-600 text-white rounded-xl p-8 mt-16">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-            <p className="text-primary-100 mb-6">
+            <p className="text-blue-100 mb-6">
               Get the latest insights, case studies, and industry trends delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-300"
+                className="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
-              <button className="bg-white text-primary-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
                 Subscribe
               </button>
             </div>
