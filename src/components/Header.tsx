@@ -351,11 +351,11 @@ const Header = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="mt-8 pt-6 border-t border-gray-200"
+                  className="mt-8 w-3/4 mx-auto pt-6 border-t border-gray-200"
                 >
                   <Link
                     to="/contact"
-                    className="btn btn-primary text-lg px-8 py-4 hover:scale-105 transition-transform"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 btn btn-primary text-white text-lg font-semibold rounded-xl shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300"
                     onClick={closeMenu}
                   >
                     <span>Get Started</span>
