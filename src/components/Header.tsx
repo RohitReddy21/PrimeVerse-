@@ -213,7 +213,7 @@ const Header = () => {
 
             <Link
               to="/contact"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+              className="btn btn-primary text-lg px-8 py-4 hover:scale-105 transition-transform"
             >
               Get Started
             </Link>
@@ -355,7 +355,7 @@ const Header = () => {
                 >
                   <Link
                     to="/contact"
-                    className="flex items-center justify-center space-x-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                    className="btn btn-primary text-lg px-8 py-4 hover:scale-105 transition-transform"
                     onClick={closeMenu}
                   >
                     <span>Get Started</span>
