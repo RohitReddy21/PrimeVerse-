@@ -16,11 +16,11 @@ import BlogDetail from './pages/BlogDetail';
 import { Navigate } from 'react-router-dom';
 
 // Service Pages
-import WebDesign from './pages/services/WebDesign';
-import SEO from './pages/services/SEO';
-import SocialMedia from './pages/services/SocialMedia';
-import PaidAds from './pages/services/PaidAds';
+import DigitalMarketing from './pages/services/DigitalMarketing';
 import WebDevelopment from './pages/services/WebDevelopment';
+import ItRecruitment from './pages/services/ItRecruitment'; 
+import AppDevelopment from './pages/services/AppDevelopment';
+import CRMMangement from './pages/services/CRMMangement';
 
 function App() {
   const location = useLocation();
@@ -44,6 +44,10 @@ function App() {
         <Route path="*" element={<Navigate to="/blog\" replace />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
+            <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/services/it-recruitment" element={<ItRecruitment />} />
+            <Route path="/services/app-development" element={<AppDevelopment />} />
+            <Route path="/services/crm-management" element={<CRMMangement />} />
           </Routes>
         </AnimatePresence>
       </main>
