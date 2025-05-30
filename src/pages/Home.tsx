@@ -27,7 +27,7 @@ const Home = () => {
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 relative z-20 text-center">
+        <div className="container mx-auto px-4 relative z-20 text-center mt-12">
           <div className="max-w-4xl mx-auto">
             <motion.h1 
               className="text-5xl md:text-7xl font-bold text-white mb-8"
@@ -35,17 +35,19 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Transforming Digital <br />
-              <span className="text-secondary-500">Presence</span> into Results
+             Welcome to Primeverse <br />
+              <span className="text-secondary-500">Empowering </span> Your Digital Future
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto"
+              className="text-xl md:text-xl text-white/90 mb-10 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              We create innovative digital marketing solutions and stunning websites 
-              that help businesses stand out in today's competitive landscape.
+              At Primeverse, we blend creativity, technology, and strategy to deliver top-tier <b className='font-bold'> Digital
+Marketing, Web Development, CRM Development, App Development and IT
+Recruitment </b>services. Whether you're scaling your online presence or building a
+powerhouse tech team, we craft solutions that drive real results.
             </motion.p>
             <motion.div 
               className="flex flex-wrap gap-6 justify-center"
@@ -96,7 +98,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-primary-500 font-semibold mb-2 inline-block">OUR EXPERTISE</span>
+            <span className="text-primary-500 font-semibold mb-2 inline-block">We EXPERTISE</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
             <p className="text-gray-600">
               We offer a comprehensive range of digital marketing and web development services
