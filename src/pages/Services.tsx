@@ -52,8 +52,9 @@ const Services = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Transform your digital presence with our comprehensive suite of 
-              marketing and development solutions designed to drive growth.
+             At Primeverse, we provide tailored digital solutions to help your business grow. From
+building high-performance websites to running results-driven marketing campaigns and
+hiring top tech talent — we deliver smart, scalable services that move your brand forward.
             </motion.p>
 
             <motion.div
@@ -122,11 +123,12 @@ const Services = () => {
               OUR EXPERTISE
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Services That Drive Results
+            Solutions Built for Success
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              From strategy to execution, we deliver comprehensive digital solutions 
-              tailored to your unique business needs.
+            We combine strategy and action to create customized digital services that align perfectly
+with your business goals and deliver measurable results.
+
             </p>
           </motion.div>
 
@@ -168,7 +170,7 @@ const Services = () => {
                   <div className="mb-8">
                     <h4 className="font-semibold text-lg mb-4 text-gray-900">Key Benefits:</h4>
                     <div className="space-y-3">
-                      {service.benefits.slice(0, 3).map((benefit, i) => (
+                      {service.benefits.slice(0, 4).map((benefit, i) => (
                         <div key={i} className="flex items-start">
                           <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700">{benefit}</span>
@@ -212,12 +214,16 @@ const Services = () => {
             <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm text-secondary-300 font-semibold rounded-full mb-4">
               OUR METHODOLOGY
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Our Proven Process
-            </h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6">
+              Our Proven Process{' '}
+                <span className="bg-gradient-to-r from-cyan-500 to-orange-500 bg-clip-text text-transparent">
+                for Achieving Success 
+                </span>
+              </h2>
             <p className="text-xl text-white/80 leading-relaxed">
-              A systematic approach that ensures every project delivers exceptional results 
-              and exceeds expectations.
+            Our process is simple, collaborative, and results-focused — built to turn your vision into a
+high-impact digital experience. Each step is designed to keep you informed, involved, and
+moving forward with confidence.
             </p>
           </motion.div>
 
@@ -225,23 +231,23 @@ const Services = () => {
             {[
               {
                 number: '01',
-                title: 'Discovery & Research',
-                description: 'Deep dive into your business, audience, and market to create a solid foundation for success.'
+                title: 'Discover',
+                description: 'We dive deep into your brand, goals, and audience to lay a strong foundation.'
               },
               {
                 number: '02',
-                title: 'Strategy & Planning',
-                description: 'Develop comprehensive strategies with clear roadmaps and measurable objectives.'
+                title: 'Plan',
+                description: 'Our team crafts a smart, data-backed strategy tailored to your objectives.'
               },
               {
                 number: '03',
-                title: 'Design & Development',
-                description: 'Execute with precision, creativity, and attention to every detail that matters.'
+                title: 'Execute',
+                description: 'We bring the plan to life with precision, creativity, and attention to detail.'
               },
               {
                 number: '04',
-                title: 'Launch & Optimize',
-                description: 'Deploy solutions and continuously optimize based on performance data and insights.'
+                title: 'Optimize',
+                description: 'We track results, gather feedback, and refine for continuous growth.'
               }
             ].map((step, index) => (
               <motion.div
@@ -369,15 +375,14 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-              Ready to Transform Your
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-secondary-300 to-accent-300">
-                {" "}Digital Presence?
-              </span>
-            </h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6">
+            Ready to Elevate Your {' '}
+                <span className="bg-gradient-to-r from-cyan-500 to-orange-500 bg-clip-text text-transparent">
+                Digital Presence?
+                </span>
+              </h2>
             <p className="text-xl md:text-2xl text-white/80 mb-10 leading-relaxed">
-              Let's discuss how our proven strategies can help you achieve 
-              your business goals and drive exceptional growth.
+            Let’s work together to build something impactful.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 

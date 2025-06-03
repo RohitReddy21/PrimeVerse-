@@ -5,6 +5,7 @@ import ThreeScene from '../components/ThreeScene';
 import ServiceCard from '../components/ServiceCard';
 import PageTransition from '../components/PageTransition';
 import { services } from '../data/services';
+import HowItWorksSection from '../components/HowItWorksSection';
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-20 text-center mt-12">
           <div className="max-w-4xl mx-auto">
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold text-white mb-8"
+              className="text-5xl md:text-6xl font-bold text-white mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -39,15 +40,15 @@ const Home = () => {
               <span className="text-secondary-500">Empowering </span> Your Digital Future
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-xl text-white/90 mb-10 max-w-3xl mx-auto"
+              className="text-xl md:text-sm text-white/90 mb-10 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              At Primeverse, we blend creativity, technology, and strategy to deliver top-tier <b className='font-bold'> Digital
-Marketing, Web Development, CRM Development, App Development and IT
-Recruitment </b>services. Whether you're scaling your online presence or building a
-powerhouse tech team, we craft solutions that drive real results.
+              We don’t just build websites or run ads — we build <b className='font-bold'>brands</b>.
+At Primeverse, we blend <b className='font-bold'>technology, creativity, and strategy</b> to create digital
+experiences that grow with your business. Whether you’re a startup finding your feet or
+an enterprise scaling fast — we’re your digital partner for the long run.
             </motion.p>
             <motion.div 
               className="flex flex-wrap gap-6 justify-center"
@@ -99,11 +100,18 @@ powerhouse tech team, we craft solutions that drive real results.
             transition={{ duration: 0.5 }}
           >
             <span className="text-primary-500 font-semibold mb-2 inline-block">We EXPERTISE</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+            <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+            OUR{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+              SERVICES
+            </span>
+          </h2>
+          <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
+        </div>
+
             <p className="text-gray-600">
-              We offer a comprehensive range of digital marketing and web development services
-              to help your business grow online and achieve tangible results.
-            </p>
+            We offer smart digital solutions — from web and app development to marketing, CRM, and IT recruitment — to help your business grow and succeed online.            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -120,7 +128,7 @@ powerhouse tech team, we craft solutions that drive real results.
           </div>
         </div>
       </section>
-
+      <HowItWorksSection />
       {/* About Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -131,34 +139,50 @@ powerhouse tech team, we craft solutions that drive real results.
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <span className="text-primary-500 font-semibold mb-2 inline-block">WHY CHOOSE US</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose PrimeVerse?</h2>
+              {/* <span className="text-primary-500 font-semibold text-center mb-2 inline-block">WHY CHOOSE US</span> */}
+              <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+            Why Choose{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+              PrimeVerse?
+            </span>
+          </h2>
+          <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
+        </div>
               <p className="text-gray-600 mb-8">
-                With years of experience in digital marketing and web development, we understand what it takes
-                to create successful online presence. Our team of experts is dedicated to helping your business
-                achieve its goals through innovative strategies and solutions.
+              At Primeverse, we blend creativity, technology, and strategy to deliver solutions that
+actually work. We're all about real results, strong partnerships, and making your digital
+journey smooth, scalable, and successful.
               </p>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
                   <CheckCircle className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1">Expert Team</h4>
-                    <p className="text-gray-600">Our professionals have years of experience in their respective fields.</p>
+                    <h4 className="font-semibold mb-1">Human-first approach</h4>
+                    {/* <p className="text-gray-600">Human-first approach
+                    </p> */}
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1">Proven Results</h4>
-                    <p className="text-gray-600">We focus on delivering measurable outcomes for your business.</p>
+                    <h4 className="font-semibold mb-1">Industry-grade tools & techniques</h4>
+                    {/* <p className="text-gray-600">We focus on delivering measurable outcomes for your business.</p> */}
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1">Tailored Solutions</h4>
-                    <p className="text-gray-600">Every business is unique, and so are our strategies and solutions.</p>
+                    <h4 className="font-semibold mb-1">Scalable solutions for every stage of business</h4>
+                    {/* <p className="text-gray-600">Every business is unique, and so are our strategies and solutions.</p> */}
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold mb-1">Transparent communication & quick delivery</h4>
+                    {/* <p className="text-gray-600">We focus on delivering measurable outcomes for your business.</p> */}
                   </div>
                 </div>
               </div>
@@ -207,7 +231,14 @@ powerhouse tech team, we craft solutions that drive real results.
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-secondary-300 font-semibold mb-2 inline-block">OUR IMPACT</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Results That Speak</h2>
+            {/* <div className="text-center mb-16 animate-fade-in-up"> */}
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6">
+            Results{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+              That Speak
+            </span>
+          </h2>
+          <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
             <p className="text-white/80">
               We're proud of the results we've delivered for our clients over the years.
               Here's a snapshot of our impact.
@@ -270,7 +301,14 @@ powerhouse tech team, we craft solutions that drive real results.
             transition={{ duration: 0.5 }}
           >
             <span className="text-primary-500 font-semibold mb-2 inline-block">TESTIMONIALS</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+            {/* <div className="text-center mb-16 animate-fade-in-up"> */}
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+            What{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+              Our Clients Say
+            </span>
+          </h2>
+          <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
             <p className="text-gray-600">
               Don't just take our word for it. Here's what our clients have to say about working with us.
             </p>
@@ -385,10 +423,16 @@ powerhouse tech team, we craft solutions that drive real results.
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Digital Presence?</h2>
+           {/* <div className="text-center mb-16 animate-fade-in-up"> */}
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6">
+          Let’s Build  {' '}
+            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+            Something That Works.  
+            </span>
+          </h2>
+          <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
             <p className="max-w-2xl mx-auto mb-8 text-white/90">
-              Let's work together to create a digital strategy that helps your business stand out and achieve its goals.
-            </p>
+            From strategy to execution, we’re here to make your brand thrive in the digital world            </p>
             <Link to="/contact" className="btn bg-white text-primary-600 hover:bg-secondary-500 hover:text-white shadow-lg">
               Contact Us Today
             </Link>
