@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const ServiceCard = ({ title, description, image, link, delay }) => {
   return (
     <motion.div
-      className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+      className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
       initial={{ opacity: 0, y: 80, scale: 0.8, rotateX: 25 }}
       whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
       viewport={{ once: true }}
@@ -23,7 +23,7 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
         rotateX: 5,
         z: 50,
         transition: { 
-          duration: 0.4,
+          duration: 0.2,
           type: "spring",
           stiffness: 300,
           damping: 20
@@ -41,48 +41,14 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
         }
       }}
     >
-      {/* Animated background gradient overlay */}
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        animate={{
-          background: [
-            "linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(234, 179, 8, 0.1))",
-            "linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(234, 179, 8, 0.05))",
-            "linear-gradient(225deg, rgba(59, 130, 246, 0.05), rgba(234, 179, 8, 0.15))",
-            "linear-gradient(315deg, rgba(59, 130, 246, 0.1), rgba(234, 179, 8, 0.1))"
-          ],
-          transition: {
-            duration: 8,
-            repeat: Infinity,
-            repeatType: "reverse"
-          }
-        }}
-      />
-      
-      {/* Animated border glow effect */}
-      <motion.div 
-        className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500 to-yellow-500 opacity-0 group-hover:opacity-30 blur-lg transition-all duration-500"
-        animate={{
-          rotate: [0, 180, 360],
-          transition: {
-            duration: 10,
-            repeat: Infinity,
-            ease: "linear"
-          }
-        }}
-        whileHover={{ 
-          opacity: 0.4,
-          scale: 1.03,
-          blur: "8px"
-        }}
-      />
+
       
       {/* Floating particles effect */}
       <motion.div className="absolute inset-0 pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-blue-400/30 rounded-full"
+            className="absolute w-2 h-2 bg-gray-300/30 rounded-full"
             style={{
               left: `${20 + i * 15}%`,
               top: `${30 + i * 10}%`,
@@ -121,7 +87,7 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
           whileHover={{ 
             scale: 1.12,
             filter: "brightness(1.2) saturate(1.3) contrast(1.1)",
-            transition: { duration: 0.5 }
+            transition: { duration: 0.3 }
           }}
         />
         
@@ -131,7 +97,7 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
           whileHover={{
             background: [
               "linear-gradient(to top, rgba(0,0,0,0.4), transparent)",
-              "radial-gradient(circle at center, rgba(59,130,246,0.3), transparent)",
+              "radial-gradient(circle at center, rgba(128,128,128,0.3), transparent)",
               "linear-gradient(to top, rgba(0,0,0,0.4), transparent)"
             ],
             transition: { duration: 2, repeat: Infinity }
@@ -158,7 +124,7 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
             scale: 1.2,
             rotate: 360,
             boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
-            transition: { duration: 0.6 }
+            transition: { duration: 0.3 }
           }}
           animate={{
             y: [0, -3, 0],
@@ -172,16 +138,16 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
           }}
         >
           <motion.svg 
-            className="w-6 h-6 text-blue-500" 
+            className="w-6 h-6 text-gray-600" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
             whileHover={{ 
               rotate: 45,
               scale: 1.2,
-              color: "#eab308"
+              color: "#374151"
             }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </motion.svg>
@@ -196,7 +162,7 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
         transition={{ delay: delay * 0.1 + 0.4, duration: 0.6 }}
       >
         <motion.h3 
-          className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300"
+          className="text-xl font-bold text-gray-800 mb-3 group-hover:text-gray-900 transition-colors duration-200"
           initial={{ opacity: 0, x: -30, rotateX: 90 }}
           whileInView={{ opacity: 1, x: 0, rotateX: 0 }}
           transition={{ 
@@ -207,15 +173,15 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
           }}
           whileHover={{
             scale: 1.05,
-            color: "#2563eb",
-            transition: { duration: 0.2 }
+            color: "#111827",
+            transition: { duration: 0.15 }
           }}
         >
           {title}
         </motion.h3>
         
         <motion.p 
-          className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300"
+          className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-200"
           initial={{ opacity: 0, x: -30, rotateX: 90 }}
           whileInView={{ opacity: 1, x: 0, rotateX: 0 }}
           transition={{ 
@@ -230,7 +196,7 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
         
         {/* Animated CTA button with complex hover effects */}
         <motion.div 
-          className="mt-6 flex items-center text-blue-500 font-semibold group-hover:text-yellow-500 cursor-pointer"
+          className="mt-6 flex items-center text-gray-600 font-semibold group-hover:text-gray-800 cursor-pointer"
           initial={{ opacity: 0, y: 30, rotateX: 90 }}
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ 
@@ -242,19 +208,11 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
           whileHover={{
             scale: 1.05,
             x: 10,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.2 }
           }}
         >
           <motion.span 
             className="mr-2"
-            animate={{
-              color: ["#3b82f6", "#eab308", "#3b82f6"],
-              transition: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            }}
           >
             Learn More
           </motion.span>
@@ -275,7 +233,7 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
               x: 12,
               rotate: 360,
               scale: 1.2,
-              transition: { duration: 0.4 }
+              transition: { duration: 0.25 }
             }}
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -283,33 +241,7 @@ const ServiceCard = ({ title, description, image, link, delay }) => {
         </motion.div>
       </motion.div>
       
-      {/* Animated bottom accent line with wave effect */}
-      <motion.div 
-        className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-yellow-500"
-        initial={{ width: "0%", scaleY: 1 }}
-        whileInView={{ 
-          width: "100%",
-          transition: { delay: delay * 0.1 + 0.8, duration: 1.2, ease: "easeOut" }
-        }}
-        whileHover={{ 
-          height: 4,
-          scaleY: 2,
-          background: "linear-gradient(90deg, #3b82f6, #eab308, #3b82f6)",
-          transition: { duration: 0.4 }
-        }}
-        animate={{
-          background: [
-            "linear-gradient(90deg, #3b82f6, #eab308)",
-            "linear-gradient(90deg, #eab308, #3b82f6)",
-            "linear-gradient(90deg, #3b82f6, #eab308)"
-          ],
-          transition: {
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }
-        }}
-      />
+
     </motion.div>
   );
 };
