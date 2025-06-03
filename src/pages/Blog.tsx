@@ -43,10 +43,12 @@ const Blog = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Insights & Case Studies
+            Insights & Ideas
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8">
-              Real stories of digital transformation, technical insights, and industry trends
+            Stay updated with the latest in digital trends, marketing tips, tech news, and growth
+strategies. Our blog is packed with valuable insights to help your business stay ahead.
+
             </p>
             
             {/* Search Bar */}
