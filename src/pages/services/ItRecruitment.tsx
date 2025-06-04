@@ -25,33 +25,33 @@ const ItRecruitment = () => {
   const services = [
     {
       icon: <Code className="w-8 h-8 text-blue-600" />,
-      title: "Software Engineer Recruitment",
-      description: "Find top-tier software developers, full-stack engineers, and programming talent for your technology projects."
+      title: "Software Engineer Hiring",
+      description: "Discover skilled software developers and full-stack engineers who bring your technology projects to life."
     },
     {
       icon: <Database className="w-8 h-8 text-blue-600" />,
-      title: "Data Science & Analytics Hiring",
-      description: "Recruit data scientists, machine learning engineers, and analytics professionals to drive your data strategy."
+      title: "Data Science & Analytics Talent",
+      description: "Attract data scientists, machine learning experts, and analytics professionals to unlock insights and drive innovation."
     },
     {
       icon: <Shield className="w-8 h-8 text-blue-600" />,
-      title: "Cybersecurity Staffing",
-      description: "Source cybersecurity experts, ethical hackers, and information security specialists to protect your assets."
+      title: "Cybersecurity Experts",
+      description: "Recruit specialists in cybersecurity, ethical hacking, and information security to protect your critical assets"
     },
     {
       icon: <Monitor className="w-8 h-8 text-blue-600" />,
-      title: "DevOps & Cloud Talent",
-      description: "Connect with DevOps engineers, cloud architects, and infrastructure specialists for modern IT operations."
+      title: "DevOps & Cloud Professionals",
+      description: "Find experienced DevOps engineers, cloud architects, and infrastructure experts to streamline your IT infrastructure."
     },
     {
       icon: <Globe className="w-8 h-8 text-blue-600" />,
-      title: "IT Project Managers",
-      description: "Recruit experienced IT project managers and scrum masters to lead your technology initiatives."
+      title: "IT Project Leadership",
+      description: "Hire proficient IT project managers and scrum master’s to ensure smooth delivery of your tech initiatives"
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-blue-600" />,
-      title: "Technical Leadership Roles",
-      description: "Find CTOs, technical directors, and senior architects to drive your technology vision and strategy."
+      title: "Technical Executive Search",
+      description: "Locate visionary CTOs, technical directors, and senior architects to lead your technology roadmap and growth."
     }
   ];
 
@@ -59,25 +59,37 @@ const ItRecruitment = () => {
     {
       step: "01",
       title: "Requirements Analysis",
-      description: "We analyze your IT staffing needs, technical requirements, and company culture to create detailed job profiles and candidate personas.",
+      description: "Understanding your technical needs and business goals.",
       duration: "1-2 days"
     },
     {
       step: "02",
-      title: "Candidate Sourcing",
-      description: "Leverage our extensive network of IT professionals, technical recruiters, and industry connections to identify qualified candidates.",
+      title: "Talent Sourcing",
+      description: "Identifying qualified candidates through extensive networks",
       duration: "1-2 weeks"
     },
     {
       step: "03",
-      title: "Technical Screening",
-      description: "Conduct comprehensive technical assessments, coding challenges, and skill evaluations to ensure candidate competency.",
+      title: "Screening & Assessment",
+      description: "Evaluating skills and experience to ensure fit.",
       duration: "3-5 days"
     },
     {
       step: "04",
-      title: "Interview & Placement",
-      description: "Coordinate interviews, negotiate offers, and facilitate smooth onboarding of your new IT talent.",
+      title: "Candidate Shortlisting ",
+      description: "Presenting top candidates for your consideration.",
+      duration: "1-2 weeks"
+    },
+    {
+      step: "05",
+      title: "Interview Coordination",
+      description: "Managing scheduling and communication.",
+      duration: "1-2 weeks"
+    },
+    {
+      step: "06",
+      title: "Onboarding Support",
+      description: "Assisting with smooth integration into your team.",
       duration: "1-2 weeks"
     }
   ];
@@ -189,12 +201,12 @@ const ItRecruitment = () => {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Elite IT Talent Recruitment
+            Matching top tech talent with the right opportunities.
             </h1>
             
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-              Connect with top software engineers, data scientists, cybersecurity experts, and IT professionals. 
-              Build exceptional technology teams with our specialized IT recruitment services.
+            We connect top tech talent with leading companies, ensuring the perfect fit for your IT
+needs. Our streamlined recruitment process saves you time and helps build highperforming teams.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
@@ -209,13 +221,13 @@ const ItRecruitment = () => {
             </div>
 
             {/* SEO Keywords Display */}
-            <div className="flex flex-wrap justify-center gap-2 text-sm mt-8">
+            {/* <div className="flex flex-wrap justify-center gap-2 text-sm mt-8">
               {specializations.slice(0, 6).map((spec, index) => (
                 <span key={index} className="px-3 py-1 bg-white/10 text-white/70 rounded-full backdrop-blur-sm">
                   {spec}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -278,11 +290,12 @@ const ItRecruitment = () => {
               OUR RECRUITMENT PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              How We Find Your IT Talent
+            Our Comprehensive Hiring Approach
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our proven IT recruitment methodology ensures we deliver qualified candidates who meet your technical requirements and cultural fit.
-            </p>
+            At Primeverse, we follow a structured recruitment process to ensure you get the right tech
+talent efficiently and effectively. Each step is designed to align candidates with your
+specific needs and company culture.            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -292,9 +305,9 @@ const ItRecruitment = () => {
                   <div className="text-4xl font-bold text-blue-600 mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
+                  {/* <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
                     {step.duration}
-                  </div>
+                  </div> */}
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-gray-200"></div>
@@ -338,7 +351,7 @@ const ItRecruitment = () => {
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="text-4xl font-bold text-blue-600 mb-1">{plan.price}</div>
+                  {/* <div className="text-4xl font-bold text-blue-600 mb-1">{plan.price}</div> */}
                   <div className="text-sm text-gray-500 mb-3">{plan.priceLabel}</div>
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
@@ -449,11 +462,10 @@ const ItRecruitment = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto text-white">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Ready to Build Your Dream IT Team?
+            Ready to secure top technology talent for your business?
             </h2>
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-              Partner with us to find exceptional IT talent that drives innovation and growth. 
-              Start your recruitment journey with a free consultation today.
+            Partner with Primeverse today to streamline your hiring process and build a highperforming team. Contact us for a consultation.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">

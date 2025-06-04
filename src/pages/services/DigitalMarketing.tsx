@@ -24,58 +24,58 @@ const DigitalMarketingIndia = () => {
     {
       icon: <Search className="w-8 h-8 text-orange-500" />,
       title: "SEO Services India",
-      description: "Dominate Google search results with our proven SEO strategies tailored for Indian businesses and local markets."
+      description: "Improve your search engine rankings with tailored SEO strategies that drive organic traffic and strengthen online authority."
     },
     {
       icon: <Target className="w-8 h-8 text-orange-500" />,
       title: "Google Ads Management",
-      description: "Maximize ROI with expertly managed Google Ads campaigns targeting Indian audiences and local keywords."
+      description: "Maximize your return on investment with expertly managed Google Ads campaigns focused on performance and conversion."
     },
     {
       icon: <Users className="w-8 h-8 text-orange-500" />,
       title: "Social Media Marketing",
-      description: "Build brand awareness and engagement across Facebook, Instagram, LinkedIn, and other platforms popular in India."
+      description: "Increase brand engagement and visibility across major platforms including Facebook, Instagram, LinkedIn, and more."
     },
     {
       icon: <Mail className="w-8 h-8 text-orange-500" />,
       title: "Email Marketing",
-      description: "Convert prospects into customers with personalized email campaigns designed for Indian market preferences."
+      description: "Nurture leads and boost conversions with personalized email campaigns crafted to align with your brand voice and audience behavior"
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-orange-500" />,
       title: "Digital Analytics",
-      description: "Track, measure, and optimize your digital marketing performance with comprehensive analytics and reporting."
+      description: "Monitor, analyze, and optimize your marketing efforts with comprehensive reporting and actionable insights."
     },
     {
       icon: <MessageSquare className="w-8 h-8 text-orange-500" />,
       title: "Content Marketing",
-      description: "Create compelling content that resonates with Indian audiences and drives organic traffic to your website."
+      description: "Deliver high-quality content that informs, engages, and converts, while reinforcing your brand’s thought leadership."
     }
   ];
 
   const process = [
     {
       step: "01",
-      title: "Market Research & Analysis",
-      description: "Deep dive into your industry, competitors, and target audience in the Indian market to create a winning strategy.",
+      title: " Research & Analysis",
+      description: "We dive into market trends, audience behavior, and competitor insights",
       duration: "1-2 weeks"
     },
     {
       step: "02",
       title: "Strategy Development",
-      description: "Create a comprehensive digital marketing roadmap with clear goals, KPIs, and tactics for the Indian market.",
+      description: "We craft a tailored digital marketing plan aligned with your business goals.",
       duration: "1 week"
     },
     {
       step: "03",
-      title: "Campaign Implementation",
-      description: "Launch and execute your digital marketing campaigns across multiple channels with continuous monitoring.",
+      title: "Execution",
+      description: "We implement targeted campaigns across channels like SEO, social media,email, and paid ads.",
       duration: "2-4 weeks"
     },
     {
       step: "04",
-      title: "Optimization & Scaling",
-      description: "Analyze performance data and optimize campaigns for better results and scalable growth in India.",
+      title: "Monitoring & Optimization",
+      description: "We track performance, analyze data, and continuously refine strategies for maximum ROI.",
       duration: "Ongoing"
     }
   ];
@@ -191,7 +191,7 @@ const DigitalMarketingIndia = () => {
               transition={{ duration: 0.5 }}
             >
               <Globe className="w-4 h-4 mr-2 text-orange-300" />
-              <span className="text-sm font-medium">Digital Marketing Services India</span>
+              <span className="text-sm font-medium">Digital Marketing Services</span>
             </motion.div>
             
             <motion.h1 
@@ -200,7 +200,7 @@ const DigitalMarketingIndia = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              #1 Digital Marketing Agency in India
+              Enhance Your Market Reach with Proven Digital Marketing Solutions
             </motion.h1>
             
             <motion.p 
@@ -209,8 +209,8 @@ const DigitalMarketingIndia = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Grow your business with proven digital marketing strategies. We help Indian businesses dominate search results, increase website traffic, and generate more leads across Mumbai, Delhi, Bangalore, and all major Indian cities.
-            </motion.p>
+At Primeverse, we deliver data-driven digital marketing strategies designed to expand your
+online visibility, attract the right audience, and drive sustainable business growth.            </motion.p>
 
             <motion.div
               className="flex flex-wrap justify-center gap-4 mb-8"
@@ -229,19 +229,7 @@ const DigitalMarketingIndia = () => {
               </button>
             </motion.div>
 
-            <motion.div
-              className="flex flex-wrap justify-center gap-2 text-sm text-white/70"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <span>Serving:</span>
-              {indianCities.map((city, index) => (
-                <span key={city} className="bg-white/10 px-2 py-1 rounded">
-                  {city}{index < indianCities.length - 1 ? ',' : ''}
-                </span>
-              ))}
-            </motion.div>
+           
           </div>
         </div>
       </section>
@@ -292,10 +280,12 @@ const DigitalMarketingIndia = () => {
               OUR SERVICES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Complete Digital Marketing Solutions for Indian Businesses
+            Comprehensive Digital Marketing Solutions
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              From SEO to social media marketing, we offer comprehensive digital marketing services designed specifically for the Indian market and consumer behavior.
+            At Primeverse, we offer end-to-end digital marketing services designed to enhance your
+brand visibility, attract qualified leads, and drive measurable business results. Our
+strategic approach ensures every campaign delivers impact and value.
             </p>
           </motion.div>
 
@@ -332,10 +322,13 @@ const DigitalMarketingIndia = () => {
               OUR PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Proven Digital Marketing Process for India
+            Our Strategic Approach to Digital Marketing
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our data-driven approach has helped hundreds of Indian businesses achieve their digital marketing goals and dominate their local markets.
+            At Primeverse, we use data-driven insights and creative strategies to deliver digital
+marketing campaigns that drive measurable results and lasting growth through four key
+phases.
+
             </p>
           </motion.div>
 
@@ -409,10 +402,10 @@ const DigitalMarketingIndia = () => {
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="text-4xl font-bold text-orange-600 mb-1">
+                  {/* <div className="text-4xl font-bold text-orange-600 mb-1">
                     {plan.price}
                     <span className="text-lg text-gray-500 font-normal">{plan.period}</span>
-                  </div>
+                  </div> */}
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
 
@@ -502,7 +495,7 @@ const DigitalMarketingIndia = () => {
         </div>
       </section>
 
-      {/* SEO Keywords Section */}
+      {/* SEO Keywords Section
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -529,7 +522,7 @@ const DigitalMarketingIndia = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section id="contact" className="py-24 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 relative overflow-hidden">

@@ -22,59 +22,59 @@ const WebDevelopment = () => {
   const features = [
     {
       icon: <Code className="w-8 h-8 text-primary-500" />,
-      title: "Custom Development",
-      description: "Tailored solutions built from scratch to match your unique business requirements."
+      title: "Discovery & Planning",
+      description: "Understanding your goals and audience to create a tailored strategy."
     },
     {
       icon: <Smartphone className="w-8 h-8 text-primary-500" />,
-      title: "Mobile Responsive",
-      description: "Perfect display and functionality across all devices and screen sizes."
+      title: "Custom Design",
+      description: "Crafting visually appealing, user-friendly website designs."
     },
     {
       icon: <Search className="w-8 h-8 text-primary-500" />,
-      title: "SEO Optimized",
-      description: "Built-in SEO best practices to help your website rank higher in search results."
+      title: "Development & Testing",
+      description: "Building fast, responsive websites with clean, reliable code."
     },
     {
       icon: <Zap className="w-8 h-8 text-primary-500" />,
-      title: "Lightning Fast",
-      description: "Optimized for speed with advanced caching and performance techniques."
+      title: "Launch & Optimization",
+      description: "Deploying your site and optimizing performance and SEO."
     },
     {
       icon: <Shield className="w-8 h-8 text-primary-500" />,
-      title: "Secure & Reliable",
-      description: "Enterprise-level security measures and reliable hosting solutions."
+      title: "Ongoing Support",
+      description: "Providing maintenance and updates to keep your site running smoothly."
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-primary-500" />,
-      title: "Analytics Ready",
-      description: "Integrated tracking and analytics to monitor your website's performance."
+      title: "Analytics & Reporting",
+      description: "Tracking website performance to measure success and guide future improvements."
     }
   ];
 
   const process = [
     {
       step: "01",
-      title: "Discovery & Planning",
-      description: "We start by understanding your business goals, target audience, and project requirements through detailed consultation and research.",
+      title: "Requirement Discovery",
+      description: "We gather insights to understand your business needs, goals, and user expectations.",
       duration: "1-2 weeks"
     },
     {
       step: "02",
       title: "Design & Prototyping",
-      description: "Create wireframes and high-fidelity designs that align with your brand identity and user experience goals.",
+      description: "We craft wireframes and prototypes that reflect your brand and user journey.",
       duration: "2-3 weeks"
     },
     {
       step: "03",
       title: "Development & Testing",
-      description: "Build your website using modern technologies and conduct thorough testing across all devices and browsers.",
+      description: "We bring the design to life with clean, scalable code and responsive functionality.",
       duration: "3-4 weeks"
     },
     {
       step: "04",
       title: "Launch & Optimization",
-      description: "Deploy your website and provide ongoing support, maintenance, and performance optimization.",
+      description: "We deploy your site seamlessly and fine-tune it for performance, SEO, and user experience.",
       duration: "1 week + ongoing"
     }
   ];
@@ -180,7 +180,8 @@ const WebDevelopment = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Beautiful Websites That Convert
+              Transformative Web Solutions to Grow Your Online Presence
+
             </motion.h1>
             
             <motion.p 
@@ -189,7 +190,8 @@ const WebDevelopment = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Create stunning, responsive websites that captivate your audience and drive conversions with our cutting-edge design and development expertise.
+              At Primeverse, we develop professionally tailored websites that engage your audience,
+              optimize user experience, and support sustainable business growth.
             </motion.p>
 
             <motion.div
@@ -258,10 +260,13 @@ const WebDevelopment = () => {
               WHAT WE OFFER
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Features That Drive Results
+            Custom Designs that capture your brand
+
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Every website we create is built with modern technologies and best practices to ensure optimal performance and user experience.
+            We deliver custom web design and development solutions that combine creativity and
+technology to help your business stand out, engage users, and grow online.
+
             </p>
           </motion.div>
 
@@ -294,14 +299,16 @@ const WebDevelopment = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-accent-100 to-secondary-100 text-accent-600 font-semibold rounded-full mb-4">
-              OUR PROCESS
-            </span>
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-green-100 to-blue-100 text-green-600 font-semibold rounded-full mb-4">
+How it works            </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              How We Create Your Website
+            Our proven process for creating successful websites
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our proven 4-step process ensures your project is delivered on time, on budget, and exceeds your expectations.
+              Our proven 4-step process ensures your project is delivered on time, on budget, and exceeds your expectations.At prime verse We combine creativity, technology, and strategy to build websites that
+captivate users and drive real results. Our process ensures clarity, quality, and
+performance at every step.
+
             </p>
           </motion.div>
 
@@ -319,9 +326,9 @@ const WebDevelopment = () => {
                   <div className="text-4xl font-bold text-primary-500 mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  <div className="inline-block px-3 py-1 bg-primary-100 text-primary-600 text-sm font-medium rounded-full">
+                  {/* <div className="inline-block px-3 py-1 bg-primary-100 text-primary-600 text-sm font-medium rounded-full">
                     {step.duration}
-                  </div>
+                  </div> */}
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-300 to-gray-200"></div>
@@ -375,7 +382,7 @@ const WebDevelopment = () => {
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="text-4xl font-bold text-primary-600 mb-2">{plan.price}</div>
+                  {/* <div className="text-4xl font-bold text-primary-600 mb-2">{plan.price}</div> */}
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
 
@@ -481,10 +488,11 @@ const WebDevelopment = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Ready to Transform Your Online Presence?
+            Ready to Transform Your digital Presence?
             </h2>
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-              Let's create a website that not only looks amazing but also drives real results for your business. Get started with a free consultation today.
+            Let’s build a website that looks great and gets real results. Start with a free consultation
+            and take the first step toward digital success. We’re here to help bring your vision to life!
             </p>
             
             <motion.div

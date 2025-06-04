@@ -24,61 +24,75 @@ const AppDevelopment = () => {
   const features = [
     {
       icon: <Smartphone className="w-8 h-8 text-emerald-500" />,
-      title: "Native Mobile Apps",
-      description: "Build high-performance iOS and Android applications with native functionality and seamless user experience."
+      title: "iOS App Development",
+      description: "Designing sleek, reliable iOS apps that deliver exceptional performance and usability for Apple devices."
     },
     {
       icon: <Monitor className="w-8 h-8 text-emerald-500" />,
-      title: "Cross-Platform Development",
-      description: "Develop once, deploy everywhere with React Native and Flutter for maximum reach and cost efficiency."
+      title: "Android App Development",
+      description: "Creating scalable Android applications built for speed, security, and optimal performance on all Android devices."
     },
     {
       icon: <Globe className="w-8 h-8 text-emerald-500" />,
-      title: "Progressive Web Apps",
-      description: "Create app-like experiences on the web with PWA technology for broader accessibility and engagement."
+      title: "Cross-Platform App Development",
+      description: "Developing versatile apps that provide a unified experience across both iOS and Android, using a single codebase"
     },
     {
       icon: <Database className="w-8 h-8 text-emerald-500" />,
-      title: "Backend Integration",
-      description: "Robust API development and cloud integration for scalable, secure, and reliable app performance."
+      title: "Hybrid App Development",
+      description: "Merging native capabilities with web technologies to build cost-effective, featurerich hybrid mobile apps."
     },
     {
       icon: <Shield className="w-8 h-8 text-emerald-500" />,
-      title: "Enterprise Security",
-      description: "Advanced security protocols, data encryption, and compliance standards for business-grade applications."
+      title: "App Maintenance & Support",
+      description: "Providing ongoing updates, bug fixes, and performance enhancements to keep your apps secure and running smoothly."
     },
-    {
-      icon: <BarChart3 className="w-8 h-8 text-emerald-500" />,
-      title: "Analytics & Insights",
-      description: "Integrated app analytics, user behavior tracking, and performance monitoring for data-driven decisions."
-    }
+    // {
+    //   icon: <BarChart3 className="w-8 h-8 text-emerald-500" />,
+    //   title: "Analytics & Insights",
+    //   description: "Providing ongoing updates, bug fixes, and performance enhancements to keep your apps secure and running smoothly."
+    // }
   ];
 
   const process = [
     {
       step: "01",
-      title: "Strategy & Planning",
-      description: "Comprehensive app strategy, market research, competitor analysis, and technical architecture planning for your mobile application.",
+      title: "Requirement Analysis",
+      description: "Understand your goals, target audience, and technical needs.",
       duration: "1-2 weeks"
     },
     {
       step: "02",
-      title: "UI/UX Design",
-      description: "User-centered design approach with wireframing, prototyping, and intuitive interface design for optimal user engagement.",
+      title: "Design & Prototyping",
+      description: "Create intuitive and engaging UI/UX designs with interactive prototypes.",
       duration: "2-3 weeks"
     },
     {
       step: "03",
-      title: "App Development",
-      description: "Agile development methodology using cutting-edge frameworks, rigorous testing, and quality assurance across all platforms.",
+      title: "Development",
+      description: "Build scalable, secure, and high-performance applications.",
       duration: "4-8 weeks"
     },
     {
       step: "04",
-      title: "Launch & Support",
-      description: "App store optimization, deployment assistance, performance monitoring, and ongoing maintenance and updates.",
+      title: "Testing & Quality Assurance",
+      description: "Conduct rigorous testing to ensure a flawless user experience.",
+      duration: "1 week + ongoing"
+    },
+    {
+      step: "05",
+      title: "Deployment",
+      description: "Launch the app smoothly on relevant platforms.",
+      duration: "1 week + ongoing"
+    },
+    {
+      step: "06",
+      title: "Maintenance & Support",
+      description: "Provide ongoing updates, improvements, and technical support.",
       duration: "1 week + ongoing"
     }
+    
+    
   ];
 
   const stats = [
@@ -173,11 +187,13 @@ const AppDevelopment = () => {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-emerald-200 to-teal-200 animate-pulse">
-              Custom Mobile Apps That Drive Growth
+            Transforming Ideas into Seamless Mobile Experiences
             </h1>
             
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-              Transform your business with cutting-edge iOS and Android app development. We build scalable, secure, and user-friendly mobile applications that deliver exceptional results.
+            We specialize in developing high-performance mobile apps that combine intuitive design,
+robust functionality, and smooth user experiences—turning your concepts into powerful
+digital products that drive results.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
@@ -219,10 +235,14 @@ const AppDevelopment = () => {
               APP DEVELOPMENT SERVICES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Comprehensive Mobile App Solutions
+            Innovative App Solutions to Empower Your Business
+
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              From native iOS and Android apps to cross-platform solutions, we deliver cutting-edge mobile applications with modern frameworks and advanced functionality.
+            We craft high-performance mobile applications tailored to your business objectives—
+delivering intuitive design, robust functionality, and seamless user experience across
+platforms.
+
             </p>
           </div>
 
@@ -249,10 +269,12 @@ const AppDevelopment = () => {
               DEVELOPMENT PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Our Proven App Development Process
+            Our Reliable App Development Framework
+
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our agile development methodology ensures your mobile app is delivered on time, within budget, and exceeds performance expectations across all platforms.
+            A dependable and efficient approach that ensures your app is delivered on time, within
+scope, and meets the highest quality standards.
             </p>
           </div>
 
@@ -263,9 +285,9 @@ const AppDevelopment = () => {
                   <div className="text-4xl font-bold text-emerald-500 mb-4 group-hover:text-teal-500 transition-colors duration-300">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-sm font-medium rounded-full group-hover:bg-teal-100 group-hover:text-teal-700 transition-colors duration-300">
+                  {/* <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-sm font-medium rounded-full group-hover:bg-teal-100 group-hover:text-teal-700 transition-colors duration-300">
                     {step.duration}
-                  </div>
+                  </div> */}
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-emerald-300 to-teal-200"></div>
@@ -311,7 +333,7 @@ const AppDevelopment = () => {
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors duration-300">{plan.name}</h3>
-                  <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:text-teal-600 transition-colors duration-300">{plan.price}</div>
+                  {/* <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:text-teal-600 transition-colors duration-300">{plan.price}</div> */}
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
 
@@ -401,10 +423,11 @@ const AppDevelopment = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto text-white">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-emerald-200 to-teal-200">
-              Ready to Build Your Next Mobile App?
+            Ready to bring your app idea to life?
             </h2>
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-              Transform your business idea into a powerful mobile application. Get started with our expert app development team and receive a free consultation and project estimate.
+            Partner with us for a seamless development experience that guarantees quality and timely
+delivery. Get in touch today to start your project.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">

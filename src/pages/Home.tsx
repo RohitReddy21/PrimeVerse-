@@ -91,44 +91,43 @@ an enterprise scaling fast — we’re your digital partner for the long run.
 
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="text-primary-500 font-semibold mb-2 inline-block">We EXPERTISE</span>
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              OUR{' '}
-              <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
-                SERVICES
-              </span>
-            </h2>
-            <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
-          </div>
-          
-          <p className="text-gray-600">
-            We offer smart digital solutions — from web and app development to marketing, CRM, and IT recruitment — to help your business grow and succeed online.
-          </p>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={service.id}
-              title={service.title}
-              description={service.shortDescription}
-              image={service.image}
-              link={service.link}
-              delay={index}
-            />
-          ))}
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center max-w-3xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="text-primary-500 font-semibold mb-2 inline-block">We EXPERTISE</span>
+            <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+            OUR{' '}
+            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+              SERVICES
+            </span>
+          </h2>
+          <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
         </div>
-      </div>
-    </section>
+
+            <p className="text-gray-600">
+            We offer smart digital solutions — from web and app development to marketing, CRM, and IT recruitment — to help your business grow and succeed online.            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={service.id}
+                title={service.title}
+                description={service.shortDescription}
+                image={service.image}
+                link={service.link}
+                delay={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
       <HowItWorksSection />
       {/* About Section */}
       <section className="py-20 bg-white">
@@ -433,7 +432,7 @@ journey smooth, scalable, and successful.
           </h2>
           <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
             <p className="max-w-2xl mx-auto mb-8 text-white/90">
-            From strategy to execution, we’re here to make your brand thrive in the digital world            </p>
+From strategy to execution, we’re here to make your brand thrive in the digital world            </p>
             <Link to="/contact" className="btn bg-white text-primary-600 hover:bg-secondary-500 hover:text-white shadow-lg">
               Contact Us Today
             </Link>

@@ -137,7 +137,7 @@ export const services: Service[] = [
       'Business Cards',
       'Marketing Materials'
     ],
-    link: '/services/brand-identity',
+    link: '/services/crm-development',
     pricing: {
       basic: { price: '$1,499', features: ['Logo Design', '3 Concepts', 'Basic Brand Colors', '5 Revisions'] },
       standard: { price: '$2,999', features: ['Complete Brand Identity', 'Brand Guidelines', 'Business Card Design', 'Unlimited Revisions'] },

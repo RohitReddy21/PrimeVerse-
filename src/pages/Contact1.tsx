@@ -16,7 +16,7 @@ const Contact = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 // Replace 'YOUR_ACCESS_KEY_HERE' with your actual W3Forms access key
-const W3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
 
   // Your local server URL - adjust as needed
   const SERVER_URL = "http://localhost:8080";

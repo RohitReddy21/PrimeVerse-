@@ -24,59 +24,59 @@ const CRMManagement = () => {
   const features = [
     {
       icon: <Users className="w-8 h-8 text-blue-500" />,
-      title: "Customer Data Management",
-      description: "Centralize all customer information, interactions, and preferences in one secure, organized database for better relationship management."
+      title: "Contact & Lead Management",
+      description: "Organize, track, and nurture customer interactions from first touch to conversion."
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-blue-500" />,
       title: "Sales Pipeline Tracking",
-      description: "Visualize your sales funnel, track deals progress, and identify bottlenecks to optimize your sales process and increase conversions."
+      description: "Monitor every stage of your sales process for better forecasting and deal management"
     },
     {
       icon: <Target className="w-8 h-8 text-blue-500" />,
-      title: "Lead Management",
-      description: "Capture, qualify, and nurture leads effectively with automated workflows and intelligent lead scoring systems."
+      title: "Task & Workflow Automation",
+      description: "Automate repetitive tasks and streamline daily operations to save time and improve efficiency."
     },
     {
       icon: <Calendar className="w-8 h-8 text-blue-500" />,
-      title: "Task & Activity Management",
-      description: "Schedule follow-ups, set reminders, and manage customer touchpoints to ensure no opportunity is missed."
+      title: "Customer Support Integration",
+      description: "Manage support tickets, communication, and service history from one centralized platform."
     },
     {
       icon: <PieChart className="w-8 h-8 text-blue-500" />,
-      title: "Advanced Analytics & Reporting",
-      description: "Generate detailed reports on sales performance, customer behavior, and ROI to make data-driven business decisions."
+      title: "Analytics & Reporting",
+      description: "Gain deep insights into customer behavior, sales performance, and business trends."
     },
     {
       icon: <MessageSquare className="w-8 h-8 text-blue-500" />,
-      title: "Multi-Channel Communication",
-      description: "Integrate email, phone, social media, and chat communications for seamless customer relationship management."
+      title: "Email & Campaign Management",
+      description: "Run targeted marketing campaigns and follow-ups directly within the CRM."
     }
   ];
 
   const process = [
     {
       step: "01",
-      title: "CRM Assessment & Strategy",
-      description: "We analyze your current customer management processes, identify pain points, and develop a comprehensive CRM strategy tailored to your business needs.",
+      title: "Discovery & Strategy Planning",
+      description: "We evaluate your current customer management workflows, identify key challenges, and define a tailored CRM strategy aligned with your business goals.",
       duration: "1-2 weeks"
     },
     {
       step: "02",
-      title: "System Configuration & Customization",
-      description: "Configure your CRM platform with custom fields, workflows, and integrations that match your unique business processes and requirements.",
+      title: "Platform Setup & Customization",
+      description: "Customize the CRM environment with specific fields, workflows, and integrations to align with your unique operational needs.",
       duration: "2-3 weeks"
     },
     {
       step: "03",
-      title: "Data Migration & Training",
-      description: "Safely migrate your existing customer data and provide comprehensive training to ensure your team can maximize the CRM's potential.",
+      title: "Data Migration & User Training",
+      description: "Securely migrate all existing data and equip your team with hands-on training to ensure confident, effective CRM usage.",
       duration: "1-2 weeks"
     },
     {
       step: "04",
-      title: "Launch & Ongoing Optimization",
-      description: "Deploy your CRM system and provide continuous support, monitoring, and optimization to ensure maximum ROI and user adoption.",
+      title: "Go-Live & Continuous Optimization",
+      description: "Launch the platform organization-wide, followed by performance monitoring, support, and iterative enhancements for maximum ROI. Partner with Primeverse to unlock the full potential of your digital presence.",
       duration: "1 week + ongoing"
     }
   ];
@@ -218,10 +218,12 @@ const CRMManagement = () => {
               CRM FEATURES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Powerful CRM Management Tools
+            Robust CRM Management Solutions
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our comprehensive CRM platform includes everything you need to manage customer relationships, boost sales performance, and drive business growth through intelligent automation and analytics.
+            Our all-in-one CRM platform equips you with the tools to effectively manage customer
+relationships, enhance sales productivity, and accelerate business growth through smart
+automation and data-driven insights.
             </p>
           </div>
 
@@ -248,10 +250,12 @@ const CRMManagement = () => {
               IMPLEMENTATION PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Your CRM Implementation Journey
+            CRM Integration Journey
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our proven methodology ensures smooth CRM implementation with minimal disruption to your business operations while maximizing user adoption and ROI.
+            A structured, end-to-end approach to implementing your CRM—ensuring seamless
+setup, smooth data migration, and successful adoption across your team
+
             </p>
           </div>
 
@@ -262,9 +266,9 @@ const CRMManagement = () => {
                   <div className="text-4xl font-bold text-blue-500 mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  <div className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">
+                  {/* <div className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">
                     {step.duration}
-                  </div>
+                  </div> */}
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-gray-200"></div>
@@ -308,7 +312,7 @@ const CRMManagement = () => {
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div>
+                  {/* <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div> */}
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
 
@@ -397,11 +401,12 @@ const CRMManagement = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto text-white">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Ready to Revolutionize Your Customer Management?
+            Ready to streamline your customer management?
+
             </h2>
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-              Transform your sales process, improve customer relationships, and drive sustainable business growth with our comprehensive CRM management platform. Start your free consultation today.
-            </p>
+            Let’s implement a CRM solution that aligns with your business goals and drives long-term
+success. Contact us today to get started.</p>
             
             <div className="flex flex-wrap justify-center gap-4">
               <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
