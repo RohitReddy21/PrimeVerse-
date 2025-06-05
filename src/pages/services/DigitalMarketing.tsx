@@ -16,7 +16,8 @@ import {
   MessageSquare,
   Mail,
   Eye,
-  Zap
+  Zap,
+  Phone
 } from 'lucide-react';
 
 const DigitalMarketingIndia = () => {
@@ -49,7 +50,7 @@ const DigitalMarketingIndia = () => {
     {
       icon: <MessageSquare className="w-8 h-8 text-orange-500" />,
       title: "Content Marketing",
-      description: "Deliver high-quality content that informs, engages, and converts, while reinforcing your brand’s thought leadership."
+      description: "Deliver high-quality content that informs, engages, and converts, while reinforcing your brand's thought leadership."
     }
   ];
 
@@ -156,18 +157,55 @@ const DigitalMarketingIndia = () => {
     }
   ];
 
-  const indianCities = [
-    "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", 
-    "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Surat"
-  ];
+  // CTA Handler Functions
+  const handleGetFreeAudit = () => {
+    // Option 1: Navigate to contact page
+    window.location.href = '/contact';
+    
+    // Option 2: Open contact form modal (if you have one)
+    // setShowContactModal(true);
+    
+    // Option 3: Scroll to contact section
+    // const contactSection = document.getElementById('contact');
+    // if (contactSection) {
+    //   contactSection.scrollIntoView({ behavior: 'smooth' });
+    // }
+    
+    // Option 4: Track analytics event
+    // gtag('event', 'click', { event_category: 'CTA', event_label: 'Free Audit Request' });
+  };
 
-  const handleContactClick = (e) => {
-    e.preventDefault();
-    // In a real app, this would navigate to contact page or scroll to contact section
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleViewCaseStudies = () => {
+    // Navigate to case studies page
+    window.location.href = '/case-studies';
+  };
+
+  const handleCallClick = () => {
+    // Option 1: Open phone dialer
+    window.location.href = 'tel:+919876543210';
+    
+    // Option 2: Show contact modal with phone number
+    // setShowPhoneModal(true);
+  };
+
+  const handleStartGrowing = (planName) => {
+    // Option 1: Navigate to contact with pre-selected plan
+    window.location.href = `/contact?plan=${encodeURIComponent(planName)}`;
+    
+    // Option 2: Open plan-specific contact form
+    // setSelectedPlan(planName);
+    // setShowContactModal(true);
+    
+    // Option 3: Track plan selection
+    // gtag('event', 'select_item', { item_id: planName, item_category: 'pricing_plan' });
+  };
+
+  const handleScheduleCall = () => {
+    // Option 1: Open calendar booking widget
+    window.open('https://calendly.com/your-calendar-link', '_blank');
+    
+    // Option 2: Navigate to scheduling page
+    // window.location.href = '/schedule-consultation';
   };
 
   return (
@@ -209,8 +247,8 @@ const DigitalMarketingIndia = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-At Primeverse, we deliver data-driven digital marketing strategies designed to expand your
-online visibility, attract the right audience, and drive sustainable business growth.            </motion.p>
+              At Primeverse, we deliver data-driven digital marketing strategies designed to expand your online visibility, attract the right audience, and drive sustainable business growth.
+            </motion.p>
 
             <motion.div
               className="flex flex-wrap justify-center gap-4 mb-8"
@@ -219,17 +257,19 @@ online visibility, attract the right audience, and drive sustainable business gr
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <button
-                onClick={handleContactClick}
-                className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
+                onClick={handleGetFreeAudit}
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black rounded-full font-semibold hover:from-yellow-500 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-xl"
               >
                 Get Free Digital Audit
+                <ArrowRight className="w-5 h-5 ml-2" />
               </button>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+              <button 
+                onClick={handleViewCaseStudies}
+                className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
+              >
                 View Case Studies
               </button>
             </motion.div>
-
-           
           </div>
         </div>
       </section>
@@ -280,12 +320,10 @@ online visibility, attract the right audience, and drive sustainable business gr
               OUR SERVICES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            Comprehensive Digital Marketing Solutions
+              Comprehensive Digital Marketing Solutions
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-            At Primeverse, we offer end-to-end digital marketing services designed to enhance your
-brand visibility, attract qualified leads, and drive measurable business results. Our
-strategic approach ensures every campaign delivers impact and value.
+              At Primeverse, we offer end-to-end digital marketing services designed to enhance your brand visibility, attract qualified leads, and drive measurable business results. Our strategic approach ensures every campaign delivers impact and value.
             </p>
           </motion.div>
 
@@ -322,13 +360,10 @@ strategic approach ensures every campaign delivers impact and value.
               OUR PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            Our Strategic Approach to Digital Marketing
+              Our Strategic Approach to Digital Marketing
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-            At Primeverse, we use data-driven insights and creative strategies to deliver digital
-marketing campaigns that drive measurable results and lasting growth through four key
-phases.
-
+              At Primeverse, we use data-driven insights and creative strategies to deliver digital marketing campaigns that drive measurable results and lasting growth through four key phases.
             </p>
           </motion.div>
 
@@ -346,9 +381,9 @@ phases.
                   <div className="text-4xl font-bold text-orange-500 mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  <div className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-sm font-medium rounded-full">
+                  {/* <div className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-sm font-medium rounded-full">
                     {step.duration}
-                  </div>
+                  </div> */}
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-orange-300 to-gray-200"></div>
@@ -419,7 +454,7 @@ phases.
                 </ul>
 
                 <button 
-                  onClick={handleContactClick}
+                  onClick={() => handleStartGrowing(plan.name)}
                   className={`block w-full text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                     plan.popular 
                       ? 'bg-gradient-to-r from-orange-500 to-red-600 text-white hover:from-orange-600 hover:to-red-700 shadow-lg hover:shadow-xl' 
@@ -495,35 +530,6 @@ phases.
         </div>
       </section>
 
-      {/* SEO Keywords Section
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Leading Digital Marketing Agency Serving All Major Indian Cities
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2 text-sm">
-              {[
-                "Digital Marketing Agency Mumbai", "SEO Services Delhi", "Social Media Marketing Bangalore",
-                "Google Ads Management Chennai", "Digital Marketing Company Hyderabad", "Online Marketing Pune",
-                "SEO Company Kolkata", "Digital Marketing Services Ahmedabad", "PPC Management Jaipur",
-                "Content Marketing India", "Email Marketing Services", "Website Traffic Growth India"
-              ].map((keyword, index) => (
-                <span key={index} className="bg-white px-3 py-1 rounded-full border border-gray-200 text-gray-600">
-                  {keyword}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
-
       {/* CTA Section */}
       <section id="contact" className="py-24 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -555,14 +561,18 @@ phases.
               viewport={{ once: true }}
             >
               <button
-                onClick={handleContactClick}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
+                onClick={handleGetFreeAudit}
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black rounded-full font-semibold hover:from-yellow-500 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-xl"
               >
                 Get Free Digital Audit
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
-                Call +91-XXXXXXXXX
+              <button 
+                onClick={handleCallClick}
+                className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call +91-9876543210
               </button>
             </motion.div>
 
@@ -580,6 +590,26 @@ phases.
                 <span>India-based Support Team</span>
               </div>
             </div>
+
+            {/* Additional CTA - Schedule Consultation */}
+            <motion.div
+              className="mt-8 pt-8 border-t border-white/20"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-lg text-white/80 mb-4">
+                Want to discuss your project personally?
+              </p>
+              <button
+                onClick={handleScheduleCall}
+                className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full font-medium hover:bg-white/20 transition-all duration-300 border border-white/30"
+              >
+                <Clock className="w-4 h-4 mr-2" />
+                Schedule Free 30-Min Consultation
+              </button>
+            </motion.div>
           </motion.div>
         </div>
       </section>

@@ -392,14 +392,14 @@ that blends innovation with execution focused on delivering real value, not just
                 </a>
               </div>
               
-              <div className="hover:scale-105 transition-transform duration-300">
+              {/* <div className="hover:scale-105 transition-transform duration-300">
                 <a 
                   href="/projects"
                   className="relative inline-block border-2 border-white text-white px-12 py-5 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-500 transform"
                 >
                   View Our Work
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </Section>

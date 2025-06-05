@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import Contact from './pages/Contact1';
+import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import { Navigate } from 'react-router-dom';
@@ -42,12 +42,12 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="*" element={<Navigate to="/blog\" replace />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Contact/>} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/services/it-recruitment" element={<ItRecruitment />} />
             <Route path="/services/app-development" element={<AppDevelopment />} />
-            <Route path="/services/crm-management" element={<CRMMangement />} />
+            <Route path="/services/crm-development" element={<CRMMangement />} />
           </Routes>
         </AnimatePresence>
       </main>

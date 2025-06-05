@@ -206,9 +206,9 @@ const WebDevelopment = () => {
               >
                 Start Your Project
               </Link>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+              {/* <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
                 View Portfolio
-              </button>
+              </button> */}
             </motion.div>
           </div>
         </div>

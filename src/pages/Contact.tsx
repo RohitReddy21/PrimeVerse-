@@ -15,70 +15,42 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
-// Replace 'YOUR_ACCESS_KEY_HERE' with your actual W3Forms access key
-const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
 
-  // Your local server URL - adjust as needed
-  const SERVER_URL = "http://localhost:8080";
+  // Replace with your actual Web3Forms access key
+  const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError('');
 
-    // Basic client-side validation
-    if (!formData.name.trim()) {
-      setSubmitError('Please enter your name.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (!formData.email.trim()) {
-      setSubmitError('Please enter your email address.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (!formData.message.trim()) {
-      setSubmitError('Please enter your message.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setSubmitError('Please enter a valid email address.');
-      setIsSubmitting(false);
-      return;
-    }
-
+    // Prepare form data for Web3Forms
+    const formDataToSend = new FormData();
+    formDataToSend.append('access_key', WEB3FORMS_ACCESS_KEY);
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('service', formData.service);
+    formDataToSend.append('message', formData.message);
+    
+    // Optional: Add subject line
+    formDataToSend.append('subject', `New Contact Form Submission from ${formData.name}`);
+    
     try {
-      const response = await fetch(`${SERVER_URL}/contact`, {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          service: formData.service,
-          message: formData.message.trim(),
-        })
+        body: formDataToSend
       });
 
       const result = await response.json();
 
-      if (response.ok && result.success) {
+      if (result.success) {
         setSubmitSuccess(true);
-        console.log('Form submitted successfully:', result.data);
-        
         // Reset form after showing success message
         setTimeout(() => {
           setSubmitSuccess(false);
@@ -91,18 +63,11 @@ const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
           });
         }, 3000);
       } else {
-        // Handle server validation errors
-        setSubmitError(result.error || 'Something went wrong. Please try again.');
+        setSubmitError('Something went wrong. Please try again.');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      
-      // Check if it's a network error
-      if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        setSubmitError('Unable to connect to server. Please check your connection and try again.');
-      } else {
-        setSubmitError('Network error. Please check your connection and try again.');
-      }
+      setSubmitError('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -160,25 +125,9 @@ const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
               </p>
               
               {submitError && (
-                <motion.div 
-                  className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
                   {submitError}
-                </motion.div>
-              )}
-
-              {submitSuccess && (
-                <motion.div 
-                  className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  Thank you for your message! We'll get back to you soon.
-                </motion.div>
+                </div>
               )}
               
               <form onSubmit={handleSubmit}>
@@ -194,8 +143,7 @@ const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      disabled={isSubmitting || submitSuccess}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -210,8 +158,7 @@ const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      disabled={isSubmitting || submitSuccess}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -227,8 +174,7 @@ const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      disabled={isSubmitting || submitSuccess}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="(123) 456-7890"
                     />
                   </div>
@@ -241,8 +187,7 @@ const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      disabled={isSubmitting || submitSuccess}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                     >
                       <option value="">Select a service</option>
                       <option value="web-development">Web Design & Development</option>
@@ -264,8 +209,7 @@ const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
                     onChange={handleChange}
                     required
                     rows={5}
-                    disabled={isSubmitting || submitSuccess}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed resize-vertical"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                     placeholder="Tell us about your project or inquiry..."
                   ></textarea>
                 </div>
@@ -274,9 +218,9 @@ const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
                   type="submit"
                   className={`btn ${
                     isSubmitting || submitSuccess
-                      ? 'bg-secondary-500 text-white cursor-not-allowed'
-                      : 'btn-primary hover:bg-primary-700'
-                  } flex items-center justify-center w-full md:w-auto min-w-[150px] transition-all duration-200`}
+                      ? 'bg-secondary-500 text-white'
+                      : 'btn-primary'
+                  } flex items-center justify-center w-full md:w-auto min-w-[150px]`}
                   disabled={isSubmitting || submitSuccess}
                   whileHover={!isSubmitting && !submitSuccess ? { scale: 1.05 } : {}}
                   whileTap={!isSubmitting && !submitSuccess ? { scale: 0.95 } : {}}
