@@ -293,7 +293,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0">
+                  {/* <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0">
                     <Phone className="text-primary-500" size={24} />
                   </div>
                   <div>
@@ -304,7 +304,7 @@ const Contact = () => {
                       </a><br />
                       <span className="text-gray-500">Monday - Friday, 10AM - 7PM PST</span>
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               

@@ -14,13 +14,13 @@ const Footer = () => {
               Transforming businesses with innovative digital marketing solutions and web design services.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61575249302444" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
                 <Facebook size={20} />
               </a>
               {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
                 <Twitter size={20} />
               </a> */}
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
+              <a href="https://www.instagram.com/primeverse.in/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
                 <Instagram size={20} />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
@@ -82,10 +82,10 @@ const Footer = () => {
                 <span className="text-gray-300"> PLOT NO 9, SHILPI VALLEY, Madhapur,
                 Hitec City, Hyderabad, Telangana 500081</span>
               </li>
-              <li className="flex items-center">
+              {/* <li className="flex items-center">
                 <Phone size={20} className="mr-3 text-primary-500" />
                 <a href="tel:+1234567890" className="text-gray-300 hover:text-primary-500 transition-colors">+1 (234) 567-890</a>
-              </li>
+              </li> */}
               <li className="flex items-center">
                 <Mail size={20} className="mr-3 text-primary-500" />
                 <a href="mailto:info@primeverse.in" className="text-gray-300 hover:text-primary-500 transition-colors">info@primeverse.in</a>
