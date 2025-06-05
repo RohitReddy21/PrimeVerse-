@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -47,11 +48,6 @@ const AppDevelopment = () => {
       title: "App Maintenance & Support",
       description: "Providing ongoing updates, bug fixes, and performance enhancements to keep your apps secure and running smoothly."
     },
-    // {
-    //   icon: <BarChart3 className="w-8 h-8 text-emerald-500" />,
-    //   title: "Analytics & Insights",
-    //   description: "Providing ongoing updates, bug fixes, and performance enhancements to keep your apps secure and running smoothly."
-    // }
   ];
 
   const process = [
@@ -91,8 +87,6 @@ const AppDevelopment = () => {
       description: "Provide ongoing updates, improvements, and technical support.",
       duration: "1 week + ongoing"
     }
-    
-    
   ];
 
   const stats = [
@@ -197,12 +191,18 @@ digital products that drive results.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full font-semibold hover:from-emerald-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+              <Link 
+                to="/contact" 
+                className="inline-block px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full font-semibold hover:from-emerald-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+              >
                 Start Your App Project
-              </button>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-emerald-300">
+              </Link>
+              <Link 
+                to="/contact" 
+                className="inline-block px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-emerald-300"
+              >
                 View App Portfolio
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -236,13 +236,11 @@ digital products that drive results.
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Innovative App Solutions to Empower Your Business
-
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
             We craft high-performance mobile applications tailored to your business objectives—
 delivering intuitive design, robust functionality, and seamless user experience across
 platforms.
-
             </p>
           </div>
 
@@ -270,7 +268,6 @@ platforms.
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Our Reliable App Development Framework
-
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
             A dependable and efficient approach that ensures your app is delivered on time, within
@@ -285,9 +282,6 @@ scope, and meets the highest quality standards.
                   <div className="text-4xl font-bold text-emerald-500 mb-4 group-hover:text-teal-500 transition-colors duration-300">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  {/* <div className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-sm font-medium rounded-full group-hover:bg-teal-100 group-hover:text-teal-700 transition-colors duration-300">
-                    {step.duration}
-                  </div> */}
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-emerald-300 to-teal-200"></div>
@@ -333,7 +327,6 @@ scope, and meets the highest quality standards.
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors duration-300">{plan.name}</h3>
-                  {/* <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:text-teal-600 transition-colors duration-300">{plan.price}</div> */}
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
 
@@ -346,7 +339,8 @@ scope, and meets the highest quality standards.
                   ))}
                 </ul>
 
-                <button 
+                <Link 
+                  to="/contact"
                   className={`block w-full text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
                     plan.popular 
                       ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-xl' 
@@ -354,7 +348,7 @@ scope, and meets the highest quality standards.
                   }`}
                 >
                   Start Development
-                </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -431,13 +425,19 @@ delivery. Get in touch today to start your project.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full font-semibold hover:from-emerald-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full font-semibold hover:from-emerald-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+              >
                 Start App Development
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-emerald-300">
+              </Link>
+              <Link 
+                to="/contact" 
+                className="inline-block px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-emerald-300"
+              >
                 Get Free App Consultation
-              </button>
+              </Link>
             </div>
 
             <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/60">

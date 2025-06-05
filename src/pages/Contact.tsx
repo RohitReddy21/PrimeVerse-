@@ -269,9 +269,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Office Location</h3>
                     <p className="text-gray-600">
-                      123 Innovation Drive<br />
-                      Tech Valley, San Francisco<br />
-                      CA 94103, USA
+                    PLOT NO 9, SHILPI VALLEY, Madhapur, <br />
+                    Hitec City, Hyderabad, Telangana 500081
                     </p>
                   </div>
                 </div>
@@ -286,9 +285,9 @@ const Contact = () => {
                       <a href="mailto:info@primeverse.com" className="text-primary-500 hover:text-primary-600 transition-colors">
                         info@primeverse.com
                       </a><br />
-                      <a href="mailto:support@primeverse.com" className="text-primary-500 hover:text-primary-600 transition-colors">
+                      {/* <a href="mailto:support@primeverse.com" className="text-primary-500 hover:text-primary-600 transition-colors">
                         support@primeverse.com
-                      </a>
+                      </a> */}
                     </p>
                   </div>
                 </div>
@@ -303,7 +302,7 @@ const Contact = () => {
                       <a href="tel:+14155550123" className="text-primary-500 hover:text-primary-600 transition-colors">
                         (415) 555-0123
                       </a><br />
-                      <span className="text-gray-500">Monday - Friday, 9AM - 6PM PST</span>
+                      <span className="text-gray-500">Monday - Friday, 10AM - 7PM PST</span>
                     </p>
                   </div>
                 </div>
@@ -314,14 +313,14 @@ const Contact = () => {
                 <ul className="space-y-2">
                   <li className="flex justify-between">
                     <span className="text-gray-600">Monday - Friday:</span>
-                    <span className="font-medium">9:00 AM - 6:00 PM</span>
+                    <span className="font-medium">10:00 AM - 7:00 PM</span>
                   </li>
-                  <li className="flex justify-between">
+                  {/* <li className="flex justify-between">
                     <span className="text-gray-600">Saturday:</span>
                     <span className="font-medium">10:00 AM - 4:00 PM</span>
-                  </li>
+                  </li> */}
                   <li className="flex justify-between">
-                    <span className="text-gray-600">Sunday:</span>
+                    <span className="text-gray-600">Saturday & Sunday:</span>
                     <span className="font-medium">Closed</span>
                   </li>
                 </ul>
@@ -332,29 +331,30 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
-            <p className="text-gray-600">
-              We're located in the heart of San Francisco's tech district. Stop by to meet our team!
-            </p>
-          </div>
-          
-          <div className="rounded-xl overflow-hidden shadow-xl h-[400px] md:h-[500px]">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.13949366787!2d-122.4376496497754!3d37.75781499659705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sca!4v1701294144417!5m2!1sen!2sca" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="PrimeVerse Office Location"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+<section className="py-20 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
+      <p className="text-gray-600">
+        We’re located in the heart of Hyderabad’s tech hub. Stop by to meet our team!
+      </p>
+    </div>
+
+    <div className="rounded-xl overflow-hidden shadow-xl h-[400px] md:h-[500px]">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.299588131979!2d78.38200277515033!3d17.442535202713098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91e4ac4a82b3%3A0xd74c11613a2542be!2sPlot%20No%209%2C%20Shilpi%20Valley%2C%20Madhapur%2C%20HITEC%20City%2C%20Hyderabad%2C%20Telangana%20500081%2C%20India!5e0!3m2!1sen!2sin!4v1717572542319!5m2!1sen!2sin"
+        width="100%" 
+        height="100%" 
+        style={{ border: 0 }} 
+        allowFullScreen 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"
+        title="PrimeVerse Office Location"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
     </PageTransition>
   );
 };

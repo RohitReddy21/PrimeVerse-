@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -180,12 +181,18 @@ const CRMManagement = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+              <Link 
+                to="/contact" 
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-xl inline-block"
+              >
                 Start Your CRM Journey
-              </button>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+              </Link>
+              <Link 
+                to="/contact" 
+                className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 inline-block"
+              >
                 View CRM Demo
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -266,9 +273,6 @@ setup, smooth data migration, and successful adoption across your team
                   <div className="text-4xl font-bold text-blue-500 mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  {/* <div className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">
-                    {step.duration}
-                  </div> */}
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-gray-200"></div>
@@ -312,7 +316,7 @@ setup, smooth data migration, and successful adoption across your team
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  {/* <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div> */}
+                  <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div>
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
 
@@ -325,7 +329,8 @@ setup, smooth data migration, and successful adoption across your team
                   ))}
                 </ul>
 
-                <button 
+                <Link 
+                  to="/contact"
                   className={`block w-full text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                     plan.popular 
                       ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700 shadow-lg hover:shadow-xl' 
@@ -333,7 +338,7 @@ setup, smooth data migration, and successful adoption across your team
                   }`}
                 >
                   Get Started
-                </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -405,17 +410,23 @@ setup, smooth data migration, and successful adoption across your team
 
             </h2>
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
-            Let’s implement a CRM solution that aligns with your business goals and drives long-term
+            Let's implement a CRM solution that aligns with your business goals and drives long-term
 success. Contact us today to get started.</p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
+              >
                 Start Your CRM Transformation
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+              </Link>
+              <Link 
+                to="/contact" 
+                className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 inline-block"
+              >
                 Schedule CRM Demo
-              </button>
+              </Link>
             </div>
 
             <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/60">

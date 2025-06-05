@@ -17,9 +17,9 @@ const Footer = () => {
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
+              {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
                 <Twitter size={20} />
-              </a>
+              </a> */}
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
                 <Instagram size={20} />
               </a>
@@ -56,16 +56,19 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Services</h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/services/web-design" className="text-gray-300 hover:text-primary-500 transition-colors">Web Design</Link>
+                <Link to="/services/web-development" className="text-gray-300 hover:text-primary-500 transition-colors">Web Development</Link>
               </li>
               <li>
-                <Link to="/services/seo" className="text-gray-300 hover:text-primary-500 transition-colors">SEO Optimization</Link>
+                <Link to="/services/digital-marketing" className="text-gray-300 hover:text-primary-500 transition-colors">Digital Marketing</Link>
               </li>
               <li>
-                <Link to="/services/social-media" className="text-gray-300 hover:text-primary-500 transition-colors">Social Media Marketing</Link>
+                <Link to="/services/it-recruitment" className="text-gray-300 hover:text-primary-500 transition-colors">IT Recruitment</Link>
               </li>
               <li>
-                <Link to="/services/paid-ads" className="text-gray-300 hover:text-primary-500 transition-colors">Paid Advertising</Link>
+                <Link to="/services/crm-development" className="text-gray-300 hover:text-primary-500 transition-colors">CRM Development</Link>
+              </li>
+              <li>
+                <Link to="/services/app-development" className="text-gray-300 hover:text-primary-500 transition-colors">App Development</Link>
               </li>
             </ul>
           </div>
@@ -75,8 +78,9 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin size={20} className="mr-3 text-primary-500 mt-1" />
-                <span className="text-gray-300">123 Business Avenue, Tech City, 12345</span>
+                <MapPin size={40} className="mr-3 text-primary-500 mt-1" />
+                <span className="text-gray-300"> PLOT NO 9, SHILPI VALLEY, Madhapur,
+                Hitec City, Hyderabad, Telangana 500081</span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-3 text-primary-500" />

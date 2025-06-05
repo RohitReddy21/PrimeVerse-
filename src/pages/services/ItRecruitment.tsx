@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { 
   ArrowRight, 
@@ -46,7 +47,7 @@ const ItRecruitment = () => {
     {
       icon: <Globe className="w-8 h-8 text-blue-600" />,
       title: "IT Project Leadership",
-      description: "Hire proficient IT project managers and scrum master’s to ensure smooth delivery of your tech initiatives"
+      description: "Hire proficient IT project managers and scrum master's to ensure smooth delivery of your tech initiatives"
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-blue-600" />,
@@ -210,24 +211,19 @@ needs. Our streamlined recruitment process saves you time and helps build highpe
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <button 
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
+              <Link 
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-xl inline-block"
               >
-                Find IT Talent Now
-              </button>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
-                Browse IT Jobs
-              </button>
+                Hire Top IT Talent Today
+              </Link>
+              <Link 
+                to="/contact"
+                className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 inline-block"
+              >
+                Explore Career Opportunities
+              </Link>
             </div>
-
-            {/* SEO Keywords Display */}
-            {/* <div className="flex flex-wrap justify-center gap-2 text-sm mt-8">
-              {specializations.slice(0, 6).map((spec, index) => (
-                <span key={index} className="px-3 py-1 bg-white/10 text-white/70 rounded-full backdrop-blur-sm">
-                  {spec}
-                </span>
-              ))}
-            </div> */}
           </div>
         </div>
       </section>
@@ -305,9 +301,6 @@ specific needs and company culture.            </p>
                   <div className="text-4xl font-bold text-blue-600 mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{step.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                  {/* <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
-                    {step.duration}
-                  </div> */}
                 </div>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-gray-200"></div>
@@ -351,7 +344,6 @@ specific needs and company culture.            </p>
                 
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  {/* <div className="text-4xl font-bold text-blue-600 mb-1">{plan.price}</div> */}
                   <div className="text-sm text-gray-500 mb-3">{plan.priceLabel}</div>
                   <p className="text-gray-600">{plan.description}</p>
                 </div>
@@ -365,15 +357,16 @@ specific needs and company culture.            </p>
                   ))}
                 </ul>
 
-                <button 
+                <Link 
+                  to="/contact"
                   className={`block w-full text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                     plan.popular 
                       ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl' 
                       : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
                   }`}
                 >
-                  Get Started
-                </button>
+                  {plan.popular ? 'Start Hiring Now' : 'Request Quote'}
+                </Link>
               </div>
             ))}
           </div>
@@ -469,15 +462,19 @@ specific needs and company culture.            </p>
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <button 
+              <Link 
+                to="/contact"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
               >
-                Start Recruiting Now
+                Get Your Dream Team Now
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
-                Schedule Free Consultation
-              </button>
+              </Link>
+              <Link 
+                to="/contact"
+                className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 inline-block"
+              >
+                Book Free Strategy Call
+              </Link>
             </div>
 
             <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/60">

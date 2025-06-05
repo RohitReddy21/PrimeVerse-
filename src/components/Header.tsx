@@ -72,7 +72,7 @@ const Header = () => {
     { name: 'Web Development', path: '/services/web-development' },
     { name: 'Digital Marketing', path: '/services/digital-marketing' },
     { name: 'IT Recruitment', path: '/services/it-recruitment' },
-    { name: 'CRM Management', path: '/services/crm-management' },
+    { name: 'CRM Development', path: '/services/crm-development' },
     { name: 'App Development', path: '/services/app-development' },
   ];
 
@@ -211,12 +211,12 @@ const Header = () => {
               )}
             </Link>
 
-            <Link
+            {/* <Link
               to="/contact"
               className="btn btn-primary text-lg px-8 py-4 hover:scale-105 transition-transform"
             >
               Get Started
-            </Link>
+            </Link> */}
           </nav>
 
           {/* Mobile Navigation Toggle */}
@@ -353,14 +353,14 @@ const Header = () => {
                   transition={{ delay: 0.6 }}
                   className="mt-8 w-3/4 mx-auto pt-6 border-t border-gray-200"
                 >
-                  <Link
+                  {/* <Link
                     to="/contact"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 btn btn-primary text-white text-lg font-semibold rounded-xl shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300"
                     onClick={closeMenu}
                   >
                     <span>Get Started</span>
                     <ArrowRight size={16} />
-                  </Link>
+                  </Link> */}
                 </motion.div>
               </div>
             </motion.div>
