@@ -23,7 +23,7 @@ const Footer = () => {
               <a href="https://www.instagram.com/primeverse.in/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
+              <a href="https://www.linkedin.com/company/prime-verse-technologies-private-limited/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary-500 transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
