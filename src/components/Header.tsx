@@ -191,7 +191,7 @@ const Header = () => {
               </AnimatePresence>
             </div>
 
-            <Link
+            {/* <Link
               to="/blog"
               className={getNavLinkClasses('/blog', location.pathname === '/blog')}
             >
@@ -199,7 +199,7 @@ const Header = () => {
               {location.pathname === '/blog' && (
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
               )}
-            </Link>
+            </Link> */}
 
             <Link
               to="/contact"
