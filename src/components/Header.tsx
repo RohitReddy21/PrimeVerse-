@@ -195,7 +195,7 @@ const Header = () => {
                     <div className="border-t my-2 mx-2 border-gray-200/50"></div>
                     <Link
                       to="/services"
-                      className="block px-4 py-3 text-sm font-medium text-teal-600 hover:bg-teal-50/80 transition-all duration-200"
+                      className="block px-4 py-3 text-sm font-medium text-[#4CBEE5] hover:bg-[#4CBEE5]/80 transition-all duration-200"
                       onClick={closeServices}
                     >
                       <div className="flex items-center justify-between">
@@ -296,8 +296,8 @@ const Header = () => {
                           to={link.path}
                           className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 backdrop-blur-sm ${
                             isActive
-                              ? 'bg-teal-50/80 text-teal-600 border-l-4 border-teal-600 shadow-sm'
-                              : 'text-gray-700 hover:bg-gray-50/50 hover:text-teal-600'
+                              ? 'bg-teal-50/80 text-[#4CBEE5] border-l-4 border-[#4CBEE5] shadow-sm'
+                              : 'text-gray-700 hover:bg-gray-50/50 hover:text-[#4CBEE5]'
                           }`}
                           onClick={closeMenu}
                         >
@@ -328,8 +328,8 @@ const Header = () => {
                             to={service.path}
                             className={`block px-3 py-2 rounded-lg text-sm transition-all duration-200 backdrop-blur-sm ${
                               location.pathname === service.path
-                                ? 'text-teal-600 bg-teal-50/80 shadow-sm'
-                                : 'text-gray-600 hover:text-teal-600 hover:bg-gray-50/50'
+                                ? 'text-[#4CBEE5] bg-[#4CBEE5]/80 shadow-sm'
+                                : 'text-gray-600 hover:text-[#4CBEE5] hover:bg-[#4CBEE5]/50'
                             }`}
                             onClick={closeMenu}
                           >
@@ -338,7 +338,7 @@ const Header = () => {
                         ))}
                         <Link
                           to="/services"
-                          className="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-teal-600 hover:bg-teal-50/50 transition-colors mt-2 backdrop-blur-sm"
+                          className="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-[#4CBEE5] hover:bg-[#4CBEE5]/50 transition-colors mt-2 backdrop-blur-sm"
                           onClick={closeMenu}
                         >
                           <span>View All Services</span>
