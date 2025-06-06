@@ -10,85 +10,87 @@ import HowItWorksSection from '../components/HowItWorksSection';
 const Home = () => {
   return (
     <PageTransition>
-       {/* Hero Section */}
-       <section className="relative h-screen flex items-center justify-center">
-        {/* Video Background */}
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 bg-black/50 z-10" /> {/* Overlay */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="https://cdn.pixabay.com/video/2024/06/14/216761_large.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      {/* Hero Section */}
+<section className="relative min-h-screen flex items-center justify-center">
+  {/* Video Background */}
+  <div className="absolute inset-0 w-full h-full ">
+    <div className="absolute inset-0 bg-black/50 z-10" /> {/* Overlay */}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover"
+    >
+      <source src="https://cdn.pixabay.com/video/2023/05/31/165232-832460011_tiny.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-        {/* Content */}
-        <div className="container mx-auto px-4 relative z-20 text-center mt-12">
-          <div className="max-w-4xl mx-auto">
-            <motion.h1 
-              className="text-5xl md:text-6xl font-bold text-white mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-             Welcome to Primeverse <br />
-              <span className="text-secondary-500">Empowering </span> Your Digital Future
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-sm text-white/90 mb-10 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              We don’t just build websites or run ads — we build <b className='font-bold'>brands</b>.
-At Primeverse, we blend <b className='font-bold'>technology, creativity, and strategy</b> to create digital
-experiences that grow with your business. Whether you’re a startup finding your feet or
-an enterprise scaling fast — we’re your digital partner for the long run.
-            </motion.p>
-            <motion.div 
-              className="flex flex-wrap gap-6 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Link 
-                to="/contact" 
-                className="btn btn-primary text-lg px-8 py-4 hover:scale-105 transition-transform"
-              >
-                Get Started
-              </Link>
-              <Link 
-                to="/services" 
-                className="btn btn-outline border-2 border-white text-white hover:bg-white hover:text-primary-500 text-lg px-8 py-4 hover:scale-105 transition-transform"
-              >
-                Our Services
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
+  {/* Content */}
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center py-20 sm:py-24 lg:py-32 mt-12">
+    <div className="max-w-4xl mx-auto">
+      <motion.h1
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 leading-tight"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Welcome to Primeverse <br className="hidden sm:block" />
+        <span className="text-secondary-500">Empowering </span> 
+        Your Digital Future
+      </motion.h1>
+      
+      <motion.p
+        className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        We don't just build websites or run ads — we build <b className='font-bold'>brands</b>. 
+        At Primeverse, we blend <b className='font-bold'>technology, creativity, and strategy</b> to 
+        create digital experiences that grow with your business. Whether you're a startup finding 
+        your feet or an enterprise scaling fast — we're your digital partner for the long run.
+      </motion.p>
+      
+      <motion.div
+        className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-md sm:max-w-none mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Link
+          to="/contact"
+          className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 hover:scale-105 transition-transform w-full sm:w-auto min-w-[160px] sm:min-w-[180px]"
         >
-          {/* <motion.div 
-            className="w-8 h-12 border-2 border-white rounded-full flex items-start justify-center p-1"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          >
-            <motion.div className="w-1 h-3 bg-white rounded-full" />
-          </motion.div> */}
-        </motion.div>
-      </section>
+          Get Started
+        </Link>
+        <Link
+          to="/services"
+          className="btn btn-outline border-2 border-white text-white hover:bg-white hover:text-primary-500 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 hover:scale-105 transition-transform w-full sm:w-auto min-w-[160px] sm:min-w-[180px]"
+        >
+          Our Services
+        </Link>
+      </motion.div>
+    </div>
+  </div>
 
+  {/* Scroll Indicator */}
+  <motion.div
+    className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 1, duration: 0.5 }}
+  >
+    <motion.div
+      className="w-6 h-10 sm:w-8 sm:h-12 border-2 border-white rounded-full flex items-start justify-center p-1"
+      animate={{ y: [0, 10, 0] }}
+      transition={{ repeat: Infinity, duration: 1.5 }}
+    >
+      <motion.div className="w-1 h-2 sm:h-3 bg-white rounded-full" />
+    </motion.div>
+  </motion.div>
+</section>
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
