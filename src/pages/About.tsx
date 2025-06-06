@@ -224,8 +224,8 @@ const About = () => {
               ABOUT US
             </span>
             <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
-              About{' '}
-              <span className="bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">
+              About{' '} <br />
+              <span className="bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent text-6xl md:text-5xl">
                 Prime Verse
               </span>
             </h1>
