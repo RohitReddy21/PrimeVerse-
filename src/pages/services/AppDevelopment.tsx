@@ -293,7 +293,7 @@ scope, and meets the highest quality standards.
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      {/* <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-teal-100 to-orange-100 text-teal-600 font-semibold rounded-full mb-4">
@@ -353,10 +353,10 @@ scope, and meets the highest quality standards.
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-100 to-teal-100 text-orange-600 font-semibold rounded-full mb-4">
@@ -403,7 +403,7 @@ scope, and meets the highest quality standards.
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-slate-900 via-teal-900 to-emerald-800 relative overflow-hidden">

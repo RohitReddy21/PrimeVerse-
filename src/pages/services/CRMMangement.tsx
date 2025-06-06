@@ -284,7 +284,7 @@ setup, smooth data migration, and successful adoption across your team
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      {/* <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-100 to-purple-100 text-cyan-600 font-semibold rounded-full mb-4">
@@ -315,9 +315,9 @@ setup, smooth data migration, and successful adoption across your team
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3> */}
                   {/* <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div> */}
-                  <p className="text-gray-600">{plan.description}</p>
+                  {/* <p className="text-gray-600">{plan.description}</p>
                 </div>
 
                 <ul className="space-y-4 mb-8">
@@ -343,10 +343,10 @@ setup, smooth data migration, and successful adoption across your team
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-600 font-semibold rounded-full mb-4">
@@ -393,7 +393,7 @@ setup, smooth data migration, and successful adoption across your team
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-600 relative overflow-hidden">

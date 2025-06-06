@@ -312,7 +312,7 @@ specific needs and company culture.            </p>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      {/* <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-green-100 to-blue-100 text-green-700 font-semibold rounded-full mb-4">
@@ -371,10 +371,10 @@ specific needs and company culture.            </p>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 font-semibold rounded-full mb-4">
@@ -421,7 +421,7 @@ specific needs and company culture.            </p>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Specializations Section */}
       <section className="py-16 bg-gradient-to-r from-slate-50 to-blue-50">

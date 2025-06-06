@@ -395,7 +395,7 @@ const DigitalMarketingIndia = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      {/* <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-3xl mx-auto mb-16"
@@ -436,12 +436,12 @@ const DigitalMarketingIndia = () => {
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3> */}
                   {/* <div className="text-4xl font-bold text-orange-600 mb-1">
                     {plan.price}
                     <span className="text-lg text-gray-500 font-normal">{plan.period}</span>
                   </div> */}
-                  <p className="text-gray-600">{plan.description}</p>
+                  {/* <p className="text-gray-600">{plan.description}</p>
                 </div>
 
                 <ul className="space-y-4 mb-8">
@@ -467,10 +467,10 @@ const DigitalMarketingIndia = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-3xl mx-auto mb-16"
@@ -528,7 +528,7 @@ const DigitalMarketingIndia = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section id="contact" className="py-24 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 relative overflow-hidden">
@@ -567,13 +567,13 @@ const DigitalMarketingIndia = () => {
                 Get Free Digital Audit
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
-              <button 
+              {/* <button 
                 onClick={handleCallClick}
                 className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Call +91-9876543210
-              </button>
+              </button> */}
             </motion.div>
 
             <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/60">
@@ -599,7 +599,7 @@ const DigitalMarketingIndia = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <p className="text-lg text-white/80 mb-4">
+              {/* <p className="text-lg text-white/80 mb-4">
                 Want to discuss your project personally?
               </p>
               <button
@@ -608,7 +608,7 @@ const DigitalMarketingIndia = () => {
               >
                 <Clock className="w-4 h-4 mr-2" />
                 Schedule Free 30-Min Consultation
-              </button>
+              </button> */}
             </motion.div>
           </motion.div>
         </div>

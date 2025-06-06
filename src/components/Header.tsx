@@ -59,11 +59,10 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  // Main navigation links with icons for mobile
+  // Main navigation links with icons for mobile (removed Blog)
   const navLinks = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'About', path: '/about', icon: User },
-    { name: 'Blog', path: '/blog', icon: BookOpen },
     { name: 'Contact', path: '/contact', icon: Mail },
   ];
 
@@ -76,21 +75,21 @@ const Header = () => {
     { name: 'App Development', path: '/services/app-development' },
   ];
 
-  // Helper function to get nav link classes
+  // Helper function to get nav link classes (changed blue to teal)
   const getNavLinkClasses = (path, isActive) => {
     const baseClasses = "text-lg font-medium transition-all duration-300 relative";
-    const activeClasses = "text-blue-400";
-    const inactiveClasses = isScrolled ? "text-white hover:text-blue-400" : "text-white hover:text-blue-400";
+    const activeClasses = "text-[#4CBEE5]";
+    const inactiveClasses = isScrolled ? "text-white hover:text-[#4CBEE5]" : "text-white hover:text-[#4CBEE5]";
     
     return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
   };
 
-  // Helper function for services button classes
+  // Helper function for services button classes (changed blue to teal)
   const getServicesButtonClasses = () => {
     const isActive = location.pathname.startsWith('/services');
     const baseClasses = "flex items-center text-lg font-medium transition-all duration-300";
-    const activeClasses = "text-blue-400";
-    const inactiveClasses = isScrolled ? "text-white hover:text-blue-400" : "text-white hover:text-blue-400";
+    const activeClasses = "text-[#4CBEE5]";
+    const inactiveClasses = isScrolled ? "text-white hover:text-[#4CBEE5]" : "text-white hover:text-[#4CBEE5]";
     
     return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
   };
@@ -117,7 +116,7 @@ const Header = () => {
             >
               Home
               {location.pathname === '/' && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#4CBEE5] rounded-full"></span>
               )}
             </Link>
             
@@ -127,7 +126,7 @@ const Header = () => {
             >
               About
               {location.pathname === '/about' && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#4CBEE5] rounded-full"></span>
               )}
             </Link>
             
@@ -145,7 +144,7 @@ const Header = () => {
                   }`} 
                 />
                 {location.pathname.startsWith('/services') && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#4CBEE5] rounded-full"></span>
                 )}
               </button>
               
@@ -162,9 +161,9 @@ const Header = () => {
                       <Link
                         key={service.name}
                         to={service.path}
-                        className={`block px-4 py-3 text-sm transition-all duration-200 hover:bg-blue-50 hover:text-blue-600 border-l-4 border-transparent hover:border-blue-400 ${
+                        className={`block px-4 py-3 text-sm transition-all duration-200 hover:bg-teal-50 hover:text-teal-600 border-l-4 border-transparent hover:border-teal-400 ${
                           location.pathname === service.path
-                            ? 'text-blue-600 bg-blue-50 border-blue-400'
+                            ? 'text-teal-600 bg-teal-50 border-teal-400'
                             : 'text-gray-700'
                         }`}
                         onClick={closeServices}
@@ -178,7 +177,7 @@ const Header = () => {
                     <div className="border-t my-2 mx-2"></div>
                     <Link
                       to="/services"
-                      className="block px-4 py-3 text-sm font-medium text-blue-600 hover:bg-blue-50 transition-all duration-200"
+                      className="block px-4 py-3 text-sm font-medium text-teal-600 hover:bg-teal-50 transition-all duration-200"
                       onClick={closeServices}
                     >
                       <div className="flex items-center justify-between">
@@ -191,32 +190,15 @@ const Header = () => {
               </AnimatePresence>
             </div>
 
-            {/* <Link
-              to="/blog"
-              className={getNavLinkClasses('/blog', location.pathname === '/blog')}
-            >
-              Blog
-              {location.pathname === '/blog' && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
-              )}
-            </Link> */}
-
             <Link
               to="/contact"
               className={getNavLinkClasses('/contact', location.pathname === '/contact')}
             >
               Contact
               {location.pathname === '/contact' && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-teal-400 rounded-full"></span>
               )}
             </Link>
-
-            {/* <Link
-              to="/contact"
-              className="btn btn-primary text-lg px-8 py-4 hover:scale-105 transition-transform"
-            >
-              Get Started
-            </Link> */}
           </nav>
 
           {/* Mobile Navigation Toggle */}
@@ -272,7 +254,6 @@ const Header = () => {
                     <X size={20} className="text-gray-600" />
                   </button>
                 </div>
-                {/* <p className="text-sm text-gray-600">Navigate to any section</p> */}
               </div>
 
               {/* Mobile Navigation Links */}
@@ -293,8 +274,8 @@ const Header = () => {
                           to={link.path}
                           className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
                             isActive
-                              ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600'
-                              : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                              ? 'bg-teal-50 text-teal-600 border-l-4 border-teal-600'
+                              : 'text-gray-700 hover:bg-gray-50 hover:text-teal-600'
                           }`}
                           onClick={closeMenu}
                         >
@@ -325,8 +306,8 @@ const Header = () => {
                             to={service.path}
                             className={`block px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                               location.pathname === service.path
-                                ? 'text-blue-600 bg-blue-50'
-                                : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                                ? 'text-teal-600 bg-teal-50'
+                                : 'text-gray-600 hover:text-teal-600 hover:bg-gray-50'
                             }`}
                             onClick={closeMenu}
                           >
@@ -335,7 +316,7 @@ const Header = () => {
                         ))}
                         <Link
                           to="/services"
-                          className="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition-colors mt-2"
+                          className="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-teal-600 hover:bg-teal-50 transition-colors mt-2"
                           onClick={closeMenu}
                         >
                           <span>View All Services</span>
@@ -353,14 +334,6 @@ const Header = () => {
                   transition={{ delay: 0.6 }}
                   className="mt-8 w-3/4 mx-auto pt-6 border-t border-gray-200"
                 >
-                  {/* <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 btn btn-primary text-white text-lg font-semibold rounded-xl shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300"
-                    onClick={closeMenu}
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight size={16} />
-                  </Link> */}
                 </motion.div>
               </div>
             </motion.div>

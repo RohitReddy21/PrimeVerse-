@@ -89,14 +89,14 @@ export const services: Service[] = [
     title: 'IT RECRUITMENT',
     icon: '🔍',
     image: 'https://img.freepik.com/free-photo/woman-selecting-pictures-people_1134-466.jpg?uid=R191946801&ga=GA1.1.1304083209.1747895911&semt=ais_hybrid&w=740',
-    imageAlt: 'SEO analytics and optimization tools',
-    shortDescription: 'Improve your search rankings and drive organic traffic to your website.',
-    fullDescription: 'Our SEO experts will help you improve your search engine rankings and drive more organic traffic to your website. We use proven techniques and best practices to optimize your content and build your online authority.',
+    imageAlt: 'IT Recruitment',
+    shortDescription: 'We connect businesses with highly skilled IT professionals who drive innovation and results.',
+    fullDescription: 'At Primeverse, we specialize in sourcing and placing top-tier IT professionals across diverse technologies and domains. Whether you are a startup looking for your first developer or an enterprise scaling your tech team, we streamline the hiring process to deliver exceptional talent fast.',
     benefits: [
       'Talent Acquisition: We help you find skilled IT professionals that match your technical and cultural requirements.',
       'End-to-End Hiring Support: From job posting to final on boarding, we manage the complete recruitment life cycle.',
       'Specialized Tech Hiring: Expertise in recruiting for software development,data science, cybersecurity, cloud computing, and more.',
-      ' Contract & Full-Time Roles: We provide flexible hiring models for both permanent and contract-based positions.',
+      'Contract & Full-Time Roles: We provide flexible hiring models for both permanent and contract-based positions.',
       'Pre-Screened Candidates: Every candidate is thoroughly vetted through technical assessments and interviews.',
       'Fast Turnaround Time: Swift recruitment process to ensure minimal downtime for your projects.'
     ],
@@ -121,7 +121,7 @@ export const services: Service[] = [
     icon: '✨',
     image: 'https://img.freepik.com/free-photo/customer-relationship-management-concept_23-2150038399.jpg?uid=R191946801&ga=GA1.1.1304083209.1747895911&semt=ais_hybrid&w=740',
     imageAlt: 'Creative brand identity design process',
-    shortDescription: ' We specialize in developing custom Customer Relationship Management (CRM) systems designed for your unique business operation.',
+    shortDescription: 'We specialize in developing custom Customer Relationship Management (CRM) systems designed for your unique business operation.',
     fullDescription: 'We specialize in developing custom Customer Relationship Management (CRM) systems designed for your unique business operation. Our CRM solutions are designed to streamline operations and enhance team productivity, and deepen customer engagement through automation, analytics, and seamless integration.',
     benefits: [
       'Contact Management: A centralized, organized, and searchable database of all your customers, and the required operational data like accounts, spending, invoices, contracts etc.',
@@ -150,8 +150,8 @@ export const services: Service[] = [
     icon: '📱',
     image: 'https://img.freepik.com/free-photo/representations-user-experience-interface-design_23-2150104516.jpg?uid=R191946801&ga=GA1.1.1304083209.1747895911&semt=ais_hybrid&w=740',
     imageAlt: 'Social media content creation and management',
-    shortDescription: 'Engage your audience and build a strong social media presence with our strategic content creation and community management services.',
-    fullDescription: 'Build a thriving social media community with our comprehensive management services. We create engaging content, manage your social presence, and help you connect with your audience across all major platforms.',
+    shortDescription: 'We build high-performance, user-friendly mobile apps that turn ideas into impactful digital experiences.',
+    fullDescription: 'Transform your vision into a high-performing mobile app with Primeverse. We design and develop custom applications tailored to your business needs—whether it\'s iOS, Android, or cross-platform.',
     benefits: [
       'Custom Mobile App Solutions : Tailored apps designed to meet your business goals and user needs.',
       ' iOS & Android Development: Native and cross-platform apps built for maximum performance on all major devices.',

@@ -274,11 +274,14 @@ const About = () => {
               </span>
               <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
               Built on Strategy {' '}
-                <span className="bg-gradient-to-r from-cyan-500 to-orange-500 bg-clip-text text-transparent">
+                <span className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)',
+  }}>
                   and Driven by Results
                 </span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-orange-500 rounded-full mb-8" />
+              <div className="w-24 h-1 bg-gradient-to-r from-[#287C96] to-yellow-500 rounded-full mb-8" />
               <p className="text-gray-600 mb-4 text-lg leading-relaxed">
               At Primeverse, we combine smart strategy, creative thinking, and the latest tech to craft
 digital solutions that work. Every project is collaborative, transparent, and focused on
@@ -325,7 +328,10 @@ that blends innovation with execution focused on delivering real value, not just
             <span className="text-cyan-500 font-semibold mb-2 inline-block">OUR VALUES</span>
             <h2 className="text-5xl font-bold text-gray-800 mb-8">
               What{' '}
-              <span className="bg-gradient-to-r from-cyan-500 to-orange-500 bg-clip-text text-transparent">
+              <span className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)',
+  }}>
                 Drives Us
               </span>
             </h2>
@@ -348,12 +354,15 @@ that blends innovation with execution focused on delivering real value, not just
         </Section>
 
         {/* Team Section */}
-        <Section bgPattern>
+        {/* <Section bgPattern>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-cyan-500 font-semibold mb-2 inline-block">OUR TEAM</span>
             <h2 className="text-5xl font-bold text-gray-800 mb-8">
               Meet The{' '}
-              <span className="bg-gradient-to-r from-cyan-500 to-orange-500 bg-clip-text text-transparent">
+              <span className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)',
+  }}>
                 Experts
               </span>
             </h2>
@@ -367,7 +376,7 @@ that blends innovation with execution focused on delivering real value, not just
               <TeamCard key={index} member={member} index={index} />
             ))}
           </div>
-        </Section>
+        </Section> */}
 
         {/* CTA Section */}
         <Section className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">

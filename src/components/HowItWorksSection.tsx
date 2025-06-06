@@ -174,7 +174,10 @@ export default function HowItWorksSection() {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             HOW IT{' '}
-            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+            <span className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)'
+  }}>
               WORKS
             </span>
           </h2>

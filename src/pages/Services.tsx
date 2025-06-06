@@ -27,15 +27,15 @@ const Services = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <motion.div
+            {/* <motion.div
               className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Star className="w-4 h-4 mr-2 text-accent-300" />
-              <span className="text-sm font-medium">Award-Winning Digital Solutions</span>
-            </motion.div>
+              {/* <Star className="w-4 h-4 mr-2 text-accent-300" /> */}
+              {/* <span className="text-sm font-medium">Award-Winning Digital Solutions</span> */}
+            {/* </motion.div> */}
             
             <motion.h1 
               className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-secondary-200"
@@ -69,9 +69,9 @@ hiring top tech talent — we deliver smart, scalable services that move your br
               >
                 Start Your Project
               </Link>
-              <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+              {/* <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
                 View Portfolio
-              </button>
+              </button> */}
             </motion.div>
           </div>
         </div>
@@ -273,7 +273,7 @@ moving forward with confidence.
       </section>
 
       {/* Enhanced Testimonials */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-3xl mx-auto mb-16"
@@ -357,47 +357,41 @@ moving forward with confidence.
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Enhanced CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-black/20"></div>
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-secondary-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-400/20 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6">
-            Ready to Elevate Your {' '}
-                <span className="bg-gradient-to-r from-cyan-500 to-orange-500 bg-clip-text text-transparent">
-                Digital Presence?
-                </span>
-              </h2>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 leading-relaxed">
-            Let’s work together to build something impactful.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/contact" 
-                className="px-8 py-4 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold rounded-full hover:from-secondary-600 hover:to-secondary-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
-              >
-                Start Your Project
-              </Link>
-              <button className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
-                Schedule Consultation
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <section className="py-24 bg-white relative overflow-hidden">
+  <div className="container mx-auto px-4 text-center relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="max-w-4xl mx-auto"
+    >
+      <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        Ready to Elevate Your{' '}
+        <span className="bg-gradient-to-r from-cyan-500 to-orange-500 bg-clip-text text-transparent">
+          Digital Presence?
+        </span>
+      </h2>
+
+      <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed">
+        Let’s work together to build something impactful.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Link 
+          to="/contact" 
+          className="px-8 py-4 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold rounded-full hover:from-secondary-600 hover:to-secondary-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
+        >
+          Start Your Project
+        </Link>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
     </PageTransition>
   );
 };

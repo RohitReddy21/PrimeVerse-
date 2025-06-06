@@ -340,7 +340,7 @@ performance at every step.
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      {/* <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-3xl mx-auto mb-16"
@@ -381,9 +381,9 @@ performance at every step.
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3> */}
                   {/* <div className="text-4xl font-bold text-primary-600 mb-2">{plan.price}</div> */}
-                  <p className="text-gray-600">{plan.description}</p>
+                  {/* <p className="text-gray-600">{plan.description}</p>
                 </div>
 
                 <ul className="space-y-4 mb-8">
@@ -408,11 +408,11 @@ performance at every step.
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </div> */}
+      {/* </section> */}
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-3xl mx-auto mb-16"
@@ -469,7 +469,7 @@ performance at every step.
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-600 relative overflow-hidden">

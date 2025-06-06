@@ -79,13 +79,13 @@ an enterprise scaling fast — we’re your digital partner for the long run.
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          <motion.div 
+          {/* <motion.div 
             className="w-8 h-12 border-2 border-white rounded-full flex items-start justify-center p-1"
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
             <motion.div className="w-1 h-3 bg-white rounded-full" />
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </section>
 
@@ -99,13 +99,19 @@ an enterprise scaling fast — we’re your digital partner for the long run.
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-primary-500 font-semibold mb-2 inline-block">We EXPERTISE</span>
+            {/* <span className="text-primary-500 font-semibold mb-2 inline-block">We EXPERTISE</span> */}
             <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             OUR{' '}
-            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
-              SERVICES
-            </span>
+            <span
+  className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)'
+  }}
+>
+  SERVICES
+</span>
+
           </h2>
           <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
         </div>
@@ -143,7 +149,10 @@ an enterprise scaling fast — we’re your digital partner for the long run.
               <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             Why Choose{' '}
-            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+            <span className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)'
+  }}>
               PrimeVerse?
             </span>
           </h2>
@@ -234,7 +243,10 @@ journey smooth, scalable, and successful.
             {/* <div className="text-center mb-16 animate-fade-in-up"> */}
           <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6">
             Results{' '}
-            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+            <span className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)'
+  }}>
               That Speak
             </span>
           </h2>
@@ -291,7 +303,7 @@ journey smooth, scalable, and successful.
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center max-w-3xl mx-auto mb-16"
@@ -301,10 +313,12 @@ journey smooth, scalable, and successful.
             transition={{ duration: 0.5 }}
           >
             <span className="text-primary-500 font-semibold mb-2 inline-block">TESTIMONIALS</span>
-            {/* <div className="text-center mb-16 animate-fade-in-up"> */}
           <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             What{' '}
-            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
+            <span className="bg-clip-text text-transparent"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)'
+  }}>
               Our Clients Say
             </span>
           </h2>
@@ -412,33 +426,45 @@ journey smooth, scalable, and successful.
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-           {/* <div className="text-center mb-16 animate-fade-in-up"> */}
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-100 mb-6">
-          Let’s Build  {' '}
-            <span className="bg-gradient-to-r from-blue-500 to-yellow-500 bg-clip-text text-transparent">
-            Something That Works.  
-            </span>
-          </h2>
-          <div className="mt-8 w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto rounded-full"></div>
-            <p className="max-w-2xl mx-auto mb-8 text-white/90">
-From strategy to execution, we’re here to make your brand thrive in the digital world            </p>
-            <Link to="/contact" className="btn bg-white text-primary-600 hover:bg-secondary-500 hover:text-white shadow-lg">
-              Contact Us Today
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+<section className="py-20 bg-white text-gray-900">
+  <div className="container mx-auto px-4 text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2 className="text-5xl md:text-6xl font-bold mb-6">
+        Let’s Build{' '}
+        <span
+          className="bg-clip-text text-transparent"
+          style={{
+            backgroundImage: 'linear-gradient(to right, #287C96, #F59E0B)',
+          }}
+        >
+          Something That Works.
+        </span>
+      </h2>
+
+      <div className="mt-8 w-24 h-1 bg-gradient-to-r from-[#287C96] to-yellow-500 mx-auto rounded-full"></div>
+
+      <p className="max-w-2xl mx-auto mb-8 text-gray-700">
+        From strategy to execution, we’re here to make your brand thrive in the digital world
+      </p>
+
+      <Link
+        to="/contact"
+        className="btn bg-[#287C96] text-white hover:bg-yellow-500 hover:text-gray-900 shadow-lg"
+      >
+        Contact Us Today
+      </Link>
+    </motion.div>
+  </div>
+</section>
+
     </PageTransition>
   );
 };
