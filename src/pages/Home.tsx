@@ -28,7 +28,7 @@ const Home = () => {
   </div>
 
   {/* Content */}
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center py-20 sm:py-24 lg:py-32 mt-12">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center py-20 sm:py-24 lg:py-32 mt-4 mb:mt-2">
     <div className="max-w-4xl mx-auto">
       <motion.h1
         className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 leading-tight"
@@ -76,7 +76,7 @@ const Home = () => {
   </div>
 
   {/* Scroll Indicator */}
-  <motion.div
+  {/* <motion.div
     className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 z-20"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -89,7 +89,7 @@ const Home = () => {
     >
       <motion.div className="w-1 h-2 sm:h-3 bg-white rounded-full" />
     </motion.div>
-  </motion.div>
+  </motion.div> */}
 </section>
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
