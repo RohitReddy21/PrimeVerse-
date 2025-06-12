@@ -17,7 +17,7 @@ const Contact = () => {
   const [submitError, setSubmitError] = useState('');
 
   // Replace with your actual Web3Forms access key
-  const WEB3FORMS_ACCESS_KEY = "c74e5518-55b7-4a3d-8fc9-86ce17f11ea8";
+  const WEB3FORMS_ACCESS_KEY = "eb9391e6-c69c-40f8-a150-da112b3f9b82";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -282,8 +282,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Email Us</h3>
                     <p className="text-gray-600">
-                      <a href="mailto:info@primeverse.com" className="text-primary-500 hover:text-primary-600 transition-colors">
-                        info@primeverse.com
+                      <a href="mailto:info@primeverse.in" className="text-primary-500 hover:text-primary-600 transition-colors">
+                        info@primeverse.in
                       </a><br />
                       {/* <a href="mailto:support@primeverse.com" className="text-primary-500 hover:text-primary-600 transition-colors">
                         support@primeverse.com
@@ -308,23 +308,23 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="bg-gray-50 rounded-xl p-8">
+              {/* <div className="bg-gray-50 rounded-xl p-8">
                 <h3 className="text-xl font-semibold mb-4">Our Office Hours</h3>
                 <ul className="space-y-2">
                   <li className="flex justify-between">
                     <span className="text-gray-600">Monday - Friday:</span>
                     <span className="font-medium">10:00 AM - 7:00 PM</span>
-                  </li>
+                  </li> */}
                   {/* <li className="flex justify-between">
                     <span className="text-gray-600">Saturday:</span>
                     <span className="font-medium">10:00 AM - 4:00 PM</span>
                   </li> */}
-                  <li className="flex justify-between">
+                  {/* <li className="flex justify-between">
                     <span className="text-gray-600">Saturday & Sunday:</span>
                     <span className="font-medium">Closed</span>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>

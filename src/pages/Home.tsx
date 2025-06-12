@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-import ThreeScene from '../components/ThreeScene';
+// import ThreeScene from '../components/ThreeScene';
 import ServiceCard from '../components/ServiceCard';
 import PageTransition from '../components/PageTransition';
 import { services } from '../data/services';
@@ -50,7 +50,7 @@ const Home = () => {
         We don't just build websites or run ads — we build <b className='font-bold'>brands</b>. 
         At Primeverse, we blend <b className='font-bold'>technology, creativity, and strategy</b> to 
         create digital experiences that grow with your business. Whether you're a startup finding 
-        your feet or an enterprise scaling fast — we're your digital partner for the long run.
+        your feet or an enterprise scaling fast — we are your digital partner for the long run.
       </motion.p>
       
       <motion.div
@@ -195,6 +195,39 @@ journey smooth, scalable, and successful.
                     <h4 className="font-semibold mb-1">Transparent communication & quick delivery</h4>
                     {/* <p className="text-gray-600">We focus on delivering measurable outcomes for your business.</p> */}
                   </div>
+                 
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                  <h4 className="font-semibold mb-1">We win only when you win?</h4>
+                    {/* <p className="text-gray-600">We focus on delivering measurable outcomes for your business.</p> */}
+                  </div>
+                 
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                  <h4 className="font-semibold mb-1">We offer digital marketing services based on a percentage of the deal size rather than upfront fixed fees.</h4>
+                    {/* <p className="text-gray-600">We focus on delivering measurable outcomes for your business.</p> */}
+                  </div>
+                 
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                  <h4 className="font-semibold mb-1">No heavy retainers. No vague ROI promises. 100% aligned incentives.</h4>
+                    {/* <p className="text-gray-600">We focus on delivering measurable outcomes for your business.</p> */}
+                  </div>
+                 
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                  <h4 className="font-semibold mb-1">We tie our success directly to the revenue we help you generate. Because we believe in partnerships, not transactions.</h4>
+                    {/* <p className="text-gray-600">We focus on delivering measurable outcomes for your business.</p> */}
+                  </div>
+                 
                 </div>
               </div>
               
