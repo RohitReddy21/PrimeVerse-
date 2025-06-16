@@ -6,9 +6,24 @@ import ServiceCard from '../components/ServiceCard';
 import PageTransition from '../components/PageTransition';
 import { services } from '../data/services';
 import HowItWorksSection from '../components/HowItWorksSection';
-
+import { Helmet } from 'react-helmet-async';
 const Home = () => {
   return (
+  <>
+    <Helmet>
+      <title>Primeverse | Digital Solutions for Marketing, Development & Recruitment</title>
+      <meta name="description" content="Primeverse empowers businesses with ROI-driven digital marketing, innovative web & app
+development, CRM solutions, and expert IT recruitment. Scale smarter with us."></meta>
+      <meta name="keywords" content="Primeverse, digital marketing, web development, app development, IT recruitment, CRM
+development"></meta>
+     <meta property="og:title" content="Primeverse | Digital Marketing, Web & IT Solutions"/>
+     <meta property="og:description" content="Partner with Primeverse for ROI-driven digital marketing, web & app development, CRM systems, and expert IT recruitment. Let's grow your business."></meta>
+     <meta property="og:url" content="https://www.primeverse.in"></meta>
+     <meta property="og:type" content="website"></meta>
+     <meta property="og:image" content="https://www.primeverse.in/assets/og-image.jpg"></meta>
+     <meta property="og:site_name" content="Primeverse"></meta>
+
+    </Helmet>
     <PageTransition>
       {/* Hero Section */}
 <section className="relative min-h-screen flex items-center justify-center">
@@ -501,6 +516,7 @@ journey smooth, scalable, and successful.
 </section>
 
     </PageTransition>
+    </>
   );
 };
 
